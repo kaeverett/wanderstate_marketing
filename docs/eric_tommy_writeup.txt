@@ -1,0 +1,171 @@
+
+Sharing the first batch of Wander State website wireframe specs for you to build in Figma. This covers:
+    •    Home page (desktop + mobile)
+    •    Beverages page (desktop + mobile)
+These are layout + UX blueprints (not final visual design), but I’ve included enough detail that you can drop them straight into our 1440px / 375px system.
+
+Global design assumptions
+    •    Desktop canvas: 1440px
+    •    Mobile canvas: 375px
+    •    Grid (desktop): 12 columns, 80px side margins, 32px gutters
+    •    Grid (mobile): 4 columns, 24px side margins, 16px gutters
+    •    Section spacing (desktop):
+    ◦    Hero: ~160px top / bottom
+    ◦    Most sections: ~120px top / bottom
+Typography system (high level, so you know scale):
+    •    H1: large serif display (hero, big statements)
+    •    H2/H3: clean sans-serif
+    •    Body: 16–20px sans-serif, 1.5 line height
+    •    Buttons: medium-weight sans-serif
+Color-block placeholders:
+    •    We’re using color blocks (not actual photos yet) for:
+    ◦    Hero imagery
+    ◦    Product renders
+    ◦    Partner/lifestyle images
+    ◦    Map / community visuals
+You can treat those as image frames in Figma.
+
+1. Home Page – Desktop (1440px)
+Purpose: Lead with brand emotion → then product → then function → then community.
+Hero
+    •    Full-width hero block, ~760px tall.
+    •    Left side:
+    ◦    H1: “Stay Curious. Explore. Connect.”
+    ◦    Subhead: “A sparkling tea designed to nourish your journey — from the mountains to the everyday moments.”
+    ◦    Buttons:
+    ▪    Primary: “Shop Beverages”
+    ▪    Secondary: “Explore Our Ingredients”
+    •    Right side: large image/video placeholder (PNW / nature lifestyle).
+Layout:
+    •    H1 + subhead aligned to left grid, roughly top third of the hero.
+    •    Image block aligned to the right, taking ~60% width.
+
+Section 2 – Tagline Block
+    •    Centered H2: “Nourish Your Journey.”
+    •    Supporting sentence below, max width ~640px, centered.
+    •    Purpose: quick brand manifesto moment before diving into product.
+
+Section 3 – Product Teaser (4 SKUs)
+    •    Section title: something like “Sparkling Tea for Every State of Mind.”
+    •    3–4 product cards in a row (slider or grid depending on dev):
+    ◦    Can image placeholder
+    ◦    SKU name
+    ◦    Very short flavor line
+    ◦    Micro CTA: “View Beverage” or “Learn More”
+    •    Cards: rounded, light background, slight shadow, plenty of white space.
+
+Section 4 – Daypart Selector
+    •    Section title: “Your Daily Ritual, Reimagined.”
+    •    Horizontal tab row:
+    ◦    Morning Clarity
+    ◦    Evening Unwind
+    ◦    Movement & Endurance
+    ◦    Social & Celebrations
+    •    When a tab is active, show:
+    ◦    Left: image placeholder (daypart visual)
+    ◦    Right: title, short description, and a button (“Explore This Ritual”).
+This is basically a 2-column block + a tab bar on top.
+
+Section 5 – “Why Mushrooms” Preview
+    •    3 columns, each a simple feature card:
+    ◦    Lion’s Mane — Clarity
+    ◦    Reishi — Calm & Balance
+    ◦    Cordyceps — Endurance & Vitality
+    •    Each card:
+    ◦    Circle icon placeholder
+    ◦    Short headline
+    ◦    2–3 line description
+This section is just a teaser; full explanation lives on the Mushroom Science page.
+
+Section 6 – Clinical Evidence Preview
+    •    Light background band.
+    •    One “hero” quote or short statement about clinical trials, e.g.:
+“Lion’s Mane has been shown in double-blind, placebo-controlled human trials to support cognitive performance.”
+
+    •    Button: “View Clinical Research.”
+This maps to the detailed science/clinical page we already planned.
+
+Section 7 – Friends & Partners Preview
+    •    2-column layout:
+    ◦    Left: photo placeholder (partner / farm / forest)
+    ◦    Right: copy about Monterey Nutra, Forest Farmers, WTA
+    •    Button: “Meet Our Friends & Partners.”
+
+Section 8 – Community CTA (“Where We Wander”)
+    •    Full-width banner:
+    ◦    Headline: “Where We Wander”
+    ◦    Short line: “Share your hikes, travels, and everyday moments. Explore the Wander community map.”
+    ◦    Button: “Add Your Wander.”
+
+Footer
+    •    Dark background.
+    •    3 columns with:
+    ◦    Navigation links (Where to Find Us, Stay Connected, Blog, etc.)
+    ◦    Social icons
+    ◦    Compliance text
+
+2. Home Page – Mobile (375px)
+Same sections, but stacked and simplified.
+    •    Hero:
+    ◦    H1 and subhead centered, buttons stacked, image below.
+    •    Product teaser:
+    ◦    Cards stacked vertically (full width).
+    •    Daypart selector:
+    ◦    Tabs horizontally scrollable, content stacked (image on top, text below).
+    •    “Why Mushrooms”:
+    ◦    3 cards stacked.
+    •    Partners & Community:
+    ◦    Each section becomes a single-column, stacked layout.
+    •    Footer:
+    ◦    Single column with links, then social, then compliance.
+
+3. Beverages Page – Desktop (1440px)
+Purpose: Make the SKUs craveable and clear, with an emphasis on drinkability + function.
+Intro
+    •    H1: “Crisp. Light. Effervescent. Crafted for How You Live.”
+    •    Subhead: “Real tea. No added sugar. Low calorie. Full-spectrum functional mushrooms in every sip.”
+
+Product Grid (4 SKUs)
+    •    2 × 2 grid of product cards.
+    •    Each card:
+    ◦    Can image placeholder
+    ◦    SKU name
+    ◦    Daypart (e.g., Morning Clarity / Evening Calm / Movement / Non-Alc Aperitif)
+    ◦    Short flavor description
+    ◦    Button/Link: “View Beverage”
+We can reuse the same card style as on the homepage, just more detailed.
+
+Daypart Imagery Section
+    •    Horizontal band or scroller that visually reinforces when/where each drink fits:
+    ◦    Lemon & Mint – sunrise / bench by lake
+    ◦    Chamomile & Blackberry – evening in bed with a book
+    ◦    Yuzu & Cucumber – running in a forest
+    ◦    Hibiscus & Blood Orange – party/social moment
+These can be simple image frames for now.
+
+Ingredient Transparency Block
+    •    3-column block:
+    ◦    Real Tea
+    ◦    Full-Spectrum Mushrooms
+    ◦    No Added Sugar / Low Calorie
+    •    Each with icon + 2–3 lines of copy.
+
+Beverages CTA
+    •    Simple closing CTA:
+    ◦    Headline: “Find Your Wander State.”
+    ◦    Button: “Shop All Beverages.”
+
+4. Beverages Page – Mobile (375px)
+    •    Intro: H1 + subhead centered, standard mobile spacing.
+    •    Product grid: cards stacked vertically.
+    •    Daypart imagery: horizontal scroll or stacked images.
+    •    Ingredient block: icons arranged in a 2 × 2 or 3-row layout.
+    •    CTA: full-width button at bottom.
+
+
+Tommy Brooks
+Co-Founder & CEO | Wander State
+tommy@drinkwanderstate.com
+(206) 979-1007
+
+
