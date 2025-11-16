@@ -1150,6 +1150,73 @@ input[type="radio"] {
 
 
 /* ============================================
+   MODAL STYLES
+   ============================================ */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-3xl);
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: var(--shadow-2xl);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--color-medium-gray);
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+  border-radius: 50%;
+}
+
+.modal-close:hover {
+  color: var(--color-primary-forest);
+  background-color: var(--color-light-gray);
+  transform: rotate(90deg);
+}
+
+/* ============================================
    PRINT STYLES
    ============================================ */
 
