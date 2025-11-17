@@ -90,17 +90,68 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // ==========================================
-  // PARALLAX SCROLL EFFECT (subtle)
+  // FART SCROLL - Random fart sounds on scroll
   // ==========================================
-  window.addEventListener('scroll', function() {
-    const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('.animate-float');
+  const fartSounds = [
+    'sounds/fart1.wav',
+    'sounds/fart2.wav',
+    'sounds/fart3.wav',
+    'sounds/fart4.wav',
+    'sounds/fart5.wav',
+    'sounds/fart6.wav'
+  ];
 
-    parallaxElements.forEach((element, index) => {
-      const speed = 0.3 + (index * 0.1); // Different speeds for each element
-      const yPos = -(scrolled * speed);
-      element.style.transform = `translateY(${yPos}px)`;
-    });
+  let lastFartTime = 0;
+  const fartCooldown = 300; // Minimum ms between farts
+
+  // Preload all fart sounds
+  const fartAudioElements = fartSounds.map(src => {
+    const audio = new Audio(src);
+    audio.volume = 0.4; // Adjust volume so it's not too obnoxious
+    return audio;
+  });
+
+  function playRandomFart() {
+    const now = Date.now();
+    if (now - lastFartTime < fartCooldown) return;
+
+    // Only fart 20% of the time (1 in 5 scrolls)
+    if (Math.random() > 0.2) return;
+
+    const randomIndex = Math.floor(Math.random() * fartAudioElements.length);
+    const fartAudio = fartAudioElements[randomIndex].cloneNode();
+    fartAudio.volume = 0.3 + (Math.random() * 0.3); // Random volume between 0.3-0.6
+    fartAudio.play().catch(err => console.log('Fart failed to play:', err));
+
+    lastFartTime = now;
+  }
+
+  let lastScrollY = window.pageYOffset;
+  let ticking = false;
+
+  window.addEventListener('scroll', function() {
+    lastScrollY = window.pageYOffset;
+
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        // Fart scroll
+        playRandomFart();
+
+        // Parallax effect
+        const scrolled = lastScrollY;
+        const parallaxElements = document.querySelectorAll('.animate-float');
+
+        parallaxElements.forEach((element, index) => {
+          const speed = 0.3 + (index * 0.1);
+          const yPos = -(scrolled * speed);
+          element.style.transform = `translateY(${yPos}px)`;
+        });
+
+        ticking = false;
+      });
+
+      ticking = true;
+    }
   });
 
   // ==========================================
