@@ -196,6 +196,11 @@ body {
   line-height: var(--line-height-normal);
   color: var(--color-dark-gray);
   background-color: var(--color-cream);
+  background-image: url('docs/assets/Brand Assets/Color Palettes/mountain background png.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   overflow-x: hidden;
 }
 
