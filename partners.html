@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet the friends and partners who make WANDER STATE possible. Monterey Nutra, Forest Farmers, and Washington Trails Association.">
+  <title>Friends & Partners | WANDER STATE</title>
+  <link rel="stylesheet" href="olipop_meets_lacroix_styleguide.css">
+  <style>
+    /* Mobile Optimizations */
+    @media (max-width: 767px) {
+      .mobile-logo {
+        height: 100px !important;
+      }
+
+      .mobile-hide-tagline {
+        display: none !important;
+      }
+
+      .mobile-nav {
+        margin-bottom: 0.5rem !important;
+        border-radius: 0 !important;
+      }
+
+      .mobile-hero-heading {
+        font-size: 2.5rem !important;
+      }
+
+      .grid-cols-3 {
+        grid-template-columns: 1fr !important;
+      }
+
+      .grid-cols-2 {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .mobile-logo {
+        height: 120px !important;
+      }
+    }
+
+    /* Hamburger Menu Styles */
+    .hamburger-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 10px;
+      z-index: 1001;
+    }
+
+    .hamburger-menu span {
+      width: 25px;
+      height: 3px;
+      background-color: #2C4161;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger-menu.active span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .hamburger-menu.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger-menu.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 300px;
+      height: 100vh;
+      background: linear-gradient(to bottom, #FBF9F5 0%, #FFFFFF 100%);
+      box-shadow: -2px 0 12px rgba(47, 79, 63, 0.15);
+      transition: right 0.3s ease;
+      z-index: 1000;
+      padding: 80px 2rem 2rem;
+    }
+
+    .menu-overlay.active {
+      right: 0;
+    }
+
+    .menu-overlay nav {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .menu-overlay a {
+      color: #2C4161;
+      text-decoration: none;
+      font-size: 1.25rem;
+      font-weight: 400;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(44, 65, 97, 0.1);
+      transition: color 0.2s ease;
+    }
+
+    .menu-overlay a:hover {
+      color: var(--color-primary-forest);
+    }
+
+    .menu-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 999;
+    }
+
+    .menu-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Partner Card Styles */
+    .partner-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .partner-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 32px rgba(47, 79, 63, 0.15);
+    }
+
+    .partner-logo-container {
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(135deg, var(--color-cream) 0%, #FFFFFF 100%);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      border: 2px solid var(--color-light-gray);
+    }
+
+    .story-card {
+      background: linear-gradient(135deg, var(--color-cream) 0%, #FFFFFF 100%);
+      border-left: 4px solid var(--color-primary-forest);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav container mobile-nav" style="padding-top: 1.5rem; padding-bottom: 1.5rem; background: linear-gradient(to bottom, #FBF9F5 0%, #FFFFFF 100%); margin-bottom: 0.75rem; border-radius: 0 0 16px 16px; box-shadow: 0 2px 12px rgba(47, 79, 63, 0.04);">
+    <div style="flex: 1;">
+      <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 1.5rem;">
+        <img src="docs/assets/Brand Assets/Logos/Wander State/png/WS_Wordmark-with-Star.png" alt="Wander State Logo" class="mobile-logo" style="height: 160px; width: auto;">
+        <div style="font-family: 'Thirsty Rough', serif; font-size: 1.5rem; color: #2C4161; line-height: 1.2;">
+          Functional Sparkling Teas
+        </div>
+      </a>
+    </div>
+    <div class="nav hide-mobile">
+      <a href="beverages.html" class="nav-link">Beverages</a>
+      <a href="mushroom-science.html" class="nav-link" style="text-align: center; line-height: 1.2;">Mushroom<br>Science</a>
+      <a href="index.html#community" class="nav-link" style="text-align: center; line-height: 1.2;">Where We<br>Wander</a>
+      <a href="partners.html" class="nav-link active" style="text-align: center; line-height: 1.2;">Friends &<br>Partners</a>
+    </div>
+    <a href="#" onclick="openModal(); return false;" class="btn btn-primary btn-sm hide-mobile">Buy</a>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- Menu Backdrop -->
+  <div class="menu-backdrop" onclick="toggleMenu()"></div>
+
+  <!-- Menu Overlay -->
+  <div class="menu-overlay">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="beverages.html">Beverages</a>
+      <a href="mushroom-science.html">Mushroom Science</a>
+      <a href="index.html#community">Where We Wander</a>
+      <a href="partners.html">Friends & Partners</a>
+      <a href="#" onclick="openModal(); return false;" style="border: 2px solid #2C4161; text-align: center; border-radius: 8px; padding: 0.75rem 1.5rem;">Buy</a>
+    </nav>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="container text-center pt-7xl pb-7xl">
+    <h1 class="h1 mb-lg mobile-hero-heading">The People Who Make It Possible</h1>
+    <p class="lead mx-auto" style="max-width: 900px;">
+      Nature is the original medicine. Functional mushrooms are her prescription for clarity, calm, and vitality. Our partners don't just supply ingredients — they protect the wild spaces that inspire us, cultivate the fungi that ground us, and preserve the trails where we disconnect from screens to reconnect with what matters.
+    </p>
+    <p class="lead mx-auto mt-lg" style="max-width: 900px; color: var(--color-dark-gray);">
+      Because real connection — with yourself, your friends, and the earth — starts when you step away from the noise.
+    </p>
+  </section>
+
+  <!-- Partner Cards Section -->
+  <section class="container pb-7xl">
+    <h2 class="h2 text-center mb-3xl">Guardians of Nature's Medicine</h2>
+    <p class="text-center mx-auto mb-3xl" style="max-width: 700px; font-size: 1.125rem; color: var(--color-dark-gray);">
+      These aren't just suppliers. They're stewards of the forests, protectors of ancient wisdom, and defenders of the wild places where we find ourselves again.
+    </p>
+
+    <div class="grid grid-cols-4 gap-2xl">
+      <!-- Monterey Nutra / Amir Karian -->
+      <div class="card partner-card">
+        <div class="card-body">
+          <div class="partner-logo-container" style="padding: 0; overflow: hidden;">
+            <img src="https://www.montereynutra.com/hs-fs/hubfs/Nutraceuticals%202024/About%20Us-Our%20Story/nutra-functional-mushrooms-about-us-amir-karian-general-manager.jpg?width=558&height=314&name=nutra-functional-mushrooms-about-us-amir-karian-general-manager.jpg" alt="Amir Karian, Founder of Monterey Nutra" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h3 class="h4 mb-md text-center">Monterey Nutra</h3>
+          <p class="text-center mb-md" style="color: var(--color-primary-forest); font-weight: 600;">Amir Karian, Founder</p>
+          <p class="mb-lg" style="color: var(--color-dark-gray);">
+            Amir doesn't just source mushrooms — he honors their intelligence. Every extract is full-spectrum, fruiting body only, lab-tested for the compounds that help you think clearer, stress less, and move with purpose.
+          </p>
+          <div class="badge badge-primary mb-md">Nature's Cognitive Medicine</div>
+          <p class="small mt-lg" style="color: var(--color-medium-gray);">
+            <strong>The gift:</strong> Lion's Mane for mental clarity when you need to focus. Reishi for calm when the world is too loud. Cordyceps for vitality when adventure calls.
+          </p>
+        </div>
+      </div>
+
+      <!-- Forest Farmers / Mike Farrell -->
+      <div class="card partner-card">
+        <div class="card-body">
+          <div class="partner-logo-container" style="padding: 0; overflow: hidden;">
+            <img src="https://theforestfarmers.com/_next/image?url=%2Fteam-mike.webp&w=1920&q=75" alt="Mike Farrell, Founder of Forest Farmers" style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
+          <h3 class="h4 mb-md text-center">Forest Farmers</h3>
+          <p class="text-center mb-md" style="color: var(--color-primary-forest); font-weight: 600;">Mike Farrell, Founder</p>
+          <p class="mb-lg" style="color: var(--color-dark-gray);">
+            Mike knows the forest isn't a resource to exploit — it's a living system to nurture. His regenerative practices ensure the mushrooms we use come from ecosystems that are healing, not hurting.
+          </p>
+          <div class="badge badge-success mb-md">Healing the Forest</div>
+          <p class="small mt-lg" style="color: var(--color-medium-gray);">
+            <strong>The gift:</strong> Mushrooms grown in harmony with the land. Forests that thrive for generations. A reminder that when we take care of nature, nature takes care of us.
+          </p>
+        </div>
+      </div>
+
+      <!-- Washington Trails Association -->
+      <div class="card partner-card">
+        <div class="card-body">
+          <div class="partner-logo-container" style="padding: 0.25rem;">
+            <img src="https://www.wta.org/++theme++plonetheme.wta/images/wta-logo.png" alt="Washington Trails Association Logo" style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
+          <h3 class="h4 mb-md text-center">Washington Trails Association</h3>
+          <p class="text-center mb-md" style="color: var(--color-primary-forest); font-weight: 600;">Protecting & Maintaining Trails</p>
+          <p class="mb-lg" style="color: var(--color-dark-gray);">
+            The trails are where you leave your phone behind and find yourself again. WTA protects these sacred spaces — the alpine lakes, moss-covered forests, and summit views that remind you who you are.
+          </p>
+          <div class="badge badge-outline mb-md">Paths to Reconnection</div>
+          <p class="small mt-lg" style="color: var(--color-medium-gray);">
+            <strong>The gift:</strong> 3,000+ miles of maintained trails. Spaces to breathe, think, and disconnect from the digital world. Places to remember what matters.
+          </p>
+        </div>
+      </div>
+
+      <!-- National Park Service -->
+      <div class="card partner-card">
+        <div class="card-body">
+          <div class="partner-logo-container" style="padding: 0.5rem;">
+            <img src="https://www.nps.gov/common/commonspot/templates/assets/images/branding/nps_logo-bw.gif" alt="National Park Service Logo" style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
+          <h3 class="h4 mb-md text-center">National Park Service</h3>
+          <p class="text-center mb-md" style="color: var(--color-primary-forest); font-weight: 600;">Preserving America's Natural Heritage</p>
+          <p class="mb-lg" style="color: var(--color-dark-gray);">
+            America's wild places — the redwoods, canyons, and peaks — are cathedrals of silence in a noisy world. NPS protects them so future generations can experience the medicine of untouched nature.
+          </p>
+          <div class="badge badge-success mb-md">Keepers of Wild Medicine</div>
+          <p class="small mt-lg" style="color: var(--color-medium-gray);">
+            <strong>The gift:</strong> 85 million acres of preserved wilderness. Sanctuaries where technology fades and presence returns. The reminder that we need nature to stay human.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stories & Contribution Section -->
+  <section class="bg-cream pt-7xl pb-7xl">
+    <div class="container">
+      <h2 class="h2 text-center mb-3xl">The Philosophy Behind the Partnerships</h2>
+      <p class="text-center mx-auto mb-3xl" style="max-width: 800px; font-size: 1.125rem; color: var(--color-dark-gray);">
+        Functional mushrooms work best when paired with intention. These partners embody that intention — sourcing nature's medicine with reverence, protecting the spaces where we rediscover ourselves, and honoring the connection between inner clarity and outer wilderness.
+      </p>
+
+      <!-- Amir's Story -->
+      <div class="story-card">
+        <div class="grid grid-cols-2 gap-xl items-center">
+          <div>
+            <div style="width: 100%; height: 300px; background: linear-gradient(135deg, var(--color-secondary-mint) 20%, var(--color-primary-mushroom) 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 6rem;">
+              👨‍🔬
+            </div>
+          </div>
+          <div>
+            <h3 class="h3 mb-md">Ancient Wisdom, Modern Science</h3>
+            <p class="mb-md" style="font-size: 1.125rem; line-height: 1.75;">
+              "Mushrooms have been used for millennia to sharpen the mind and calm the spirit. But most modern extracts are diluted junk — mycelium on grain, not the actual fruiting body. We honor the ancient tradition by delivering the real thing."
+            </p>
+            <p style="color: var(--color-dark-gray);">
+              Amir understands that functional mushrooms are medicine for a distracted, disconnected world. Lion's Mane brings mental clarity when you're overstimulated. Reishi offers calm when stress won't let go. Cordyceps fuels your body when you need to move. Every batch is third-party tested because nature's intelligence deserves scientific rigor.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mike's Story -->
+      <div class="story-card">
+        <div class="grid grid-cols-2 gap-xl items-center">
+          <div>
+            <h3 class="h3 mb-md">Healing the Land That Heals Us</h3>
+            <p class="mb-md" style="font-size: 1.125rem; line-height: 1.75;">
+              "The forest isn't a factory. It's a living organism. When you cultivate mushrooms with regenerative practices, you're not just growing medicine — you're healing the ecosystem that sustains all life."
+            </p>
+            <p style="color: var(--color-dark-gray);">
+              Mike knows that nature's medicine only works when nature itself is healthy. His regenerative forestry practices restore soil, sequester carbon, and nurture biodiversity. The mushrooms we use don't just support your body — they come from forests that are thriving, not dying. It's slower and costs more, but it honors the reciprocal relationship between humans and wild places.
+            </p>
+          </div>
+          <div>
+            <div style="width: 100%; height: 300px; background: linear-gradient(135deg, var(--color-primary-moss) 20%, var(--color-primary-forest) 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 6rem;">
+              🌿
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WTA Story -->
+      <div class="story-card">
+        <div class="grid grid-cols-2 gap-xl items-center">
+          <div>
+            <div style="width: 100%; height: 300px; background: linear-gradient(135deg, var(--color-secondary-sky) 20%, var(--color-primary-moss) 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 6rem;">
+              🥾
+            </div>
+          </div>
+          <div>
+            <h3 class="h3 mb-md">Where Phones Die and Souls Come Alive</h3>
+            <p class="mb-md" style="font-size: 1.125rem; line-height: 1.75;">
+              The trail is where the noise stops. No notifications. No screens. Just you, your breath, and the ancient rhythm of footsteps on earth. That's where real connection begins.
+            </p>
+            <p style="color: var(--color-dark-gray);">
+              WTA maintains over 3,000 miles of trails — the alpine meadows, old-growth forests, and ridge-top views where you remember who you are beneath the digital static. Every can you drink supports their work: clearing trails, building bridges, and protecting the spaces where disconnecting from technology means reconnecting with yourself, your friends, and the wild. Because functional mushrooms work best when paired with presence.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- NPS Story -->
+      <div class="story-card">
+        <div class="grid grid-cols-2 gap-xl items-center">
+          <div>
+            <h3 class="h3 mb-md">Sanctuaries of Silence in a Loud World</h3>
+            <p class="mb-md" style="font-size: 1.125rem; line-height: 1.75;">
+              In a world of constant notifications and endless feeds, national parks are the last places where silence is sacred. Where you can stand under ancient trees or canyon walls and feel small in the best way.
+            </p>
+            <p style="color: var(--color-dark-gray);">
+              The NPS protects 85 million acres of wilderness — spaces where cell service fades and something deeper awakens. These aren't just tourist destinations. They're medicine for a overstimulated society, reminders that we are animals who need forests and stars to stay sane. We support their conservation work because functional mushrooms are just one tool for clarity — untouched nature is the other.
+            </p>
+          </div>
+          <div>
+            <div style="width: 100%; height: 300px; background: linear-gradient(135deg, var(--color-primary-forest) 20%, var(--color-secondary-sky) 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 6rem;">
+              🏞️
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lifestyle Philosophy Section -->
+  <section class="container pt-7xl pb-7xl">
+    <div class="text-center mb-3xl">
+      <h2 class="h2 mb-lg">Nature is the Original Medicine</h2>
+      <p class="lead mx-auto" style="max-width: 900px; color: var(--color-dark-gray);">
+        And functional mushrooms are her prescription for a world that never stops scrolling.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-2xl items-center mb-3xl">
+      <div>
+        <h3 class="h3 mb-md">Disconnect to Reconnect</h3>
+        <p class="mb-md" style="font-size: 1.125rem; line-height: 1.75;">
+          We're overstimulated, overwhelmed, and always online. Our nervous systems weren't built for infinite scrolling and constant notifications. They were built for forests, silence, and the slow rhythm of walking on dirt.
+        </p>
+        <p style="color: var(--color-dark-gray);">
+          That's why functional mushrooms work. Lion's Mane brings focus when you're scattered. Reishi calms the static when your mind won't quiet. Cordyceps fuels movement when you need to get outside and breathe. They're tools for presence — but they work best when you pair them with the real medicine: disconnecting from screens and reconnecting with yourself, your friends, and the wild.
+        </p>
+      </div>
+      <div style="height: 400px; background: linear-gradient(135deg, var(--color-primary-forest) 0%, var(--color-secondary-mint) 100%); border-radius: 24px; display: flex; align-items: center; justify-content: center; font-size: 8rem;">
+        🌲
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-2xl items-center">
+      <div style="height: 400px; background: linear-gradient(135deg, var(--color-secondary-sky) 0%, var(--color-primary-mushroom) 100%); border-radius: 24px; display: flex; align-items: center; justify-content: center; font-size: 8rem;">
+        🍄
+      </div>
+      <div>
+        <h3 class="h3 mb-md">Ancient Wisdom for Modern Life</h3>
+        <p class="mb-md" style="font-size: 1.125rem; line-height: 1.75;">
+          For thousands of years, cultures around the world turned to mushrooms for mental clarity, calm, and endurance. Not as a trend. As medicine.
+        </p>
+        <p style="color: var(--color-dark-gray);">
+          Wander State honors that ancient knowledge with modern rigor. Every mushroom extract is lab-tested, full-spectrum, and sourced from regenerative forests. But we're not just selling functional beverages — we're championing a way of living. One where you step off the grid, into the woods, and remember that clarity doesn't come from apps. It comes from silence, movement, and the intelligence of nature herself.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values & Shared Mission Section -->
+  <section class="container pt-7xl pb-7xl">
+    <h2 class="h2 text-center mb-3xl">What We All Believe</h2>
+
+    <div class="grid grid-cols-3 gap-xl">
+      <!-- Transparency -->
+      <div class="text-center">
+        <div style="width: 120px; height: 120px; background: var(--color-secondary-lemon); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+          🔍
+        </div>
+        <h3 class="h4 mb-md">Radical Transparency</h3>
+        <p style="color: var(--color-dark-gray);">
+          No proprietary blends. No vague "natural flavors." We tell you exactly what's in every can and where it comes from. You deserve to know.
+        </p>
+      </div>
+
+      <!-- Sustainability -->
+      <div class="text-center">
+        <div style="width: 120px; height: 120px; background: var(--color-secondary-mint); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+          🌍
+        </div>
+        <h3 class="h4 mb-md">Sustainability First</h3>
+        <p style="color: var(--color-dark-gray);">
+          From regenerative farms to recyclable cans, we make choices that protect the planet. Short-term profits aren't worth long-term damage.
+        </p>
+      </div>
+
+      <!-- Quality Over Everything -->
+      <div class="text-center">
+        <div style="width: 120px; height: 120px; background: var(--color-primary-mushroom); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+          ⭐
+        </div>
+        <h3 class="h4 mb-md">Quality Over Everything</h3>
+        <p style="color: var(--color-dark-gray);">
+          We could source cheaper mushrooms. We could cut corners on testing. We don't. Because you're trusting us with what you put in your body.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-gradient-forest pt-7xl pb-7xl text-center text-white">
+    <div class="container">
+      <h2 class="h2 mb-lg text-white">Put Down Your Phone. Pick Up a Can. Find a Trail.</h2>
+      <p class="lead mx-auto mb-2xl" style="max-width: 800px; color: var(--color-cream);">
+        Every sip is medicine from regenerative forests. Every can supports trail conservation. Every moment offline is a chance to remember who you are when nobody's watching.
+      </p>
+      <p class="mx-auto mb-2xl" style="max-width: 700px; color: var(--color-light-gray);">
+        Wander State isn't just a beverage. It's a philosophy.
+      </p>
+      <a href="#" onclick="openModal(); return false;" class="btn btn-secondary btn-lg">Join the Movement</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Navigation -->
+        <div>
+          <h4 class="footer-section-title">Explore</h4>
+          <a href="beverages.html" class="footer-link">Beverages</a>
+          <a href="mushroom-science.html" class="footer-link">The Science</a>
+          <a href="partners.html" class="footer-link">Partners</a>
+          <a href="index.html#community" class="footer-link">Community Map</a>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h4 class="footer-section-title">Company</h4>
+          <a href="#about" class="footer-link">Our Story</a>
+          <a href="#contact" class="footer-link">Contact</a>
+          <a href="#wholesale" class="footer-link">Wholesale</a>
+          <a href="#blog" class="footer-link">Blog</a>
+        </div>
+
+        <!-- Connect -->
+        <div>
+          <h4 class="footer-section-title">Stay Connected</h4>
+          <a href="#" class="footer-link">Instagram</a>
+          <a href="#" class="footer-link">Twitter</a>
+          <a href="#" class="footer-link">Newsletter</a>
+          <a href="#faq" class="footer-link">FAQ</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 <span class="brand-name">WANDER STATE</span>. All rights reserved.</p>
+        <p class="mt-xs small">
+          These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Pre-Release Signup Modal -->
+  <div id="preReleaseModal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <h2 class="h3 mb-lg text-center">We're Pre-Release!</h2>
+      <p class="text-center mb-xl" style="color: var(--color-dark-gray);">
+        Give us your email and we'll let you know when they are in stores.
+      </p>
+      <form id="preReleaseForm" action="https://formsubmit.co/eric@drinkwanderstate.com" method="POST">
+        <input type="hidden" name="_subject" value="New Pre-Release Signup - WANDER STATE">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none">
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="your@email.com">
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg">Add Me to the List</button>
+      </form>
+      <p class="text-center mt-md small" style="color: var(--color-medium-gray);">
+        We respect your privacy. No spam, just launch updates.
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Hamburger Menu Toggle
+    function toggleMenu() {
+      const hamburger = document.querySelector('.hamburger-menu');
+      const menuOverlay = document.querySelector('.menu-overlay');
+      const backdrop = document.querySelector('.menu-backdrop');
+
+      hamburger.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+      backdrop.classList.toggle('active');
+
+      // Prevent body scroll when menu is open
+      if (menuOverlay.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    function openModal() {
+      document.getElementById('preReleaseModal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('preReleaseModal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('preReleaseModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeModal();
+      }
+    });
+
+    // Close modal on ESC key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -6,43 +6,170 @@
   <meta name="description" content="Explore WANDER STATE's sparkling mushroom tea collection. Real tea, functional mushrooms, zero added sugar.">
   <title>Beverages | WANDER STATE</title>
   <link rel="stylesheet" href="olipop_meets_lacroix_styleguide.css">
+  <style>
+    /* Mobile Optimizations */
+    @media (max-width: 767px) {
+      /* Smaller logo on mobile */
+      .mobile-logo {
+        height: 100px !important;
+      }
+
+      /* Hide "Functional Sparkling Teas" text on very small screens */
+      .mobile-hide-tagline {
+        display: none !important;
+      }
+
+      /* Adjust nav spacing on mobile */
+      .mobile-nav {
+        margin-bottom: 0.5rem !important;
+        border-radius: 0 !important;
+      }
+    }
+
+    /* Tablet adjustments */
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .mobile-logo {
+        height: 120px !important;
+      }
+    }
+
+    /* Hamburger Menu Styles */
+    .hamburger-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 10px;
+      z-index: 1001;
+    }
+
+    .hamburger-menu span {
+      width: 25px;
+      height: 3px;
+      background-color: #2C4161;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger-menu.active span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .hamburger-menu.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger-menu.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 300px;
+      height: 100vh;
+      background: linear-gradient(to bottom, #FBF9F5 0%, #FFFFFF 100%);
+      box-shadow: -2px 0 12px rgba(47, 79, 63, 0.15);
+      transition: right 0.3s ease;
+      z-index: 1000;
+      padding: 80px 2rem 2rem;
+    }
+
+    .menu-overlay.active {
+      right: 0;
+    }
+
+    .menu-overlay nav {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .menu-overlay a {
+      color: #2C4161;
+      text-decoration: none;
+      font-size: 1.25rem;
+      font-weight: 400;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(44, 65, 97, 0.1);
+      transition: color 0.2s ease;
+    }
+
+    .menu-overlay a:hover {
+      color: var(--color-primary-forest);
+    }
+
+    .menu-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 999;
+    }
+
+    .menu-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
 </head>
 <body>
 
   <!-- Navigation -->
-  <nav class="nav container" style="padding-top: 1.5rem; padding-bottom: 1.5rem;">
+  <nav class="nav container mobile-nav" style="padding-top: 1.5rem; padding-bottom: 1.5rem; background: linear-gradient(to bottom, #FBF9F5 0%, #FFFFFF 100%); margin-bottom: 0.75rem; border-radius: 0 0 16px 16px; box-shadow: 0 2px 12px rgba(47, 79, 63, 0.04);">
     <div style="flex: 1;">
-      <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 1rem;">
-        <img src="docs/assets/Brand Assets/Logos/Lemont & Mint/WS_green-tea_web.png" alt="Wander State Logo" style="height: 60px; width: auto;">
-        <div>
-          <div style="font-family: 'TAY Birdie', cursive; font-size: 2rem; font-weight: normal; color: var(--color-primary-forest); line-height: 1.2;">
-            WANDER STATE
-          </div>
-          <div class="thirsty-rough" style="font-size: 0.875rem; color: var(--color-primary-forest); margin-top: 0.25rem; letter-spacing: 0.05em;">
-            Functional Sparkling Tea
-          </div>
+      <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 1.5rem;">
+        <img src="docs/assets/Brand Assets/Logos/Wander State/png/WS_Wordmark-with-Star.png" alt="Wander State Logo" class="mobile-logo" style="height: 160px; width: auto;">
+        <div style="font-family: 'Thirsty Rough', serif; font-size: 1.5rem; color: #2C4161; line-height: 1.2;">
+          Functional Sparkling Teas
         </div>
       </a>
     </div>
     <div class="nav hide-mobile">
       <a href="beverages.html" class="nav-link active">Beverages</a>
-      <a href="index.html#mushrooms" class="nav-link">The Science</a>
-      <a href="index.html#community" class="nav-link">Community</a>
-      <a href="index.html#partners" class="nav-link">Partners</a>
+      <a href="mushroom-science.html" class="nav-link" style="text-align: center; line-height: 1.2;">Mushroom<br>Science</a>
+      <a href="index.html#community" class="nav-link" style="text-align: center; line-height: 1.2;">Where We<br>Wander</a>
+      <a href="partners.html" class="nav-link" style="text-align: center; line-height: 1.2;">Friends &<br>Partners</a>
     </div>
     <a href="#" onclick="openModal(); return false;" class="btn btn-primary btn-sm hide-mobile">Buy</a>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </nav>
 
+  <!-- Menu Backdrop -->
+  <div class="menu-backdrop" onclick="toggleMenu()"></div>
+
+  <!-- Menu Overlay -->
+  <div class="menu-overlay">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="beverages.html">Beverages</a>
+      <a href="mushroom-science.html">Mushroom Science</a>
+      <a href="index.html#community">Where We Wander</a>
+      <a href="partners.html">Friends & Partners</a>
+      <a href="#" onclick="openModal(); return false;" style="border: 2px solid #2C4161; text-align: center; border-radius: 8px; padding: 0.75rem 1.5rem;">Buy</a>
+    </nav>
+  </div>
+
   <!-- Hero Intro -->
-  <section class="container text-center pt-5xl pb-3xl">
-    <h1 class="h1 mb-lg">Crisp. Light. Effervescent.<br>Crafted for How You Live.</h1>
-    <p class="lead mx-auto" style="max-width: 800px;">
-      Real tea. No added sugar. Low calorie. Full-spectrum functional mushrooms in every sip.
+  <section class="container text-center pt-7xl pb-7xl">
+    <h1 class="h1 mb-lg">Crisp, sparkling teas for any hour and every vibe</h1>
+    <p class="lead mx-auto" style="max-width: 900px;">
+      Creative flavors and functional boosts—made to match your mornings, your flow, and your wind-down.
     </p>
   </section>
 
   <!-- Product Grid -->
-  <section class="container pb-5xl">
+  <section class="container pb-7xl">
     <div class="grid grid-cols-2 gap-2xl">
 
       <!-- Product 1: Morning Clarity -->
@@ -180,7 +307,7 @@
   </section>
 
   <!-- Daypart Imagery Section -->
-  <section class="bg-gradient-forest pt-5xl pb-5xl text-white">
+  <section class="bg-gradient-forest pt-7xl pb-7xl text-white">
     <div class="container">
       <h2 class="h2 text-center mb-3xl text-white">How We Drink Them</h2>
 
@@ -192,9 +319,7 @@
         </div>
 
         <div class="text-center">
-          <div style="height: 200px; background: linear-gradient(135deg, var(--color-secondary-lavender) 30%, rgba(0,0,0,0.3) 100%); border-radius: 16px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; font-size: 4rem;">
-            📖
-          </div>
+          <img src="docs/assets/reading at night.png" alt="Reading at night" style="width: 100%; height: 200px; object-fit: cover; border-radius: 16px; margin-bottom: 1rem;">
           <p class="small font-semibold">Evening Wind-Down</p>
           <p class="tiny" style="color: var(--color-light-gray);">Chamomile & Blackberry</p>
         </div>
@@ -219,7 +344,7 @@
   </section>
 
   <!-- Ingredient Transparency Block -->
-  <section class="container pt-5xl pb-5xl">
+  <section class="container pt-7xl pb-7xl">
     <h2 class="h2 text-center mb-3xl">What's Actually Inside</h2>
 
     <div class="grid grid-cols-3 gap-xl">
@@ -259,13 +384,16 @@
   </section>
 
   <!-- Closing CTA -->
-  <section class="bg-gradient-sunset pt-5xl pb-5xl text-center text-white">
+  <section class="bg-gradient-sunset pt-7xl pb-7xl text-center text-white">
     <div class="container">
-      <h2 class="h2 mb-lg text-white">Find Your <span class="brand-name">WANDER STATE</span></h2>
-      <p class="lead mx-auto mb-2xl" style="max-width: 700px;">
-        Whether you're chasing summits or just trying to get through Tuesday, we've got you covered.
+      <h2 class="h2 mb-lg text-white">Your Phone Can Wait. Nature Can't.</h2>
+      <p class="lead mx-auto mb-lg" style="max-width: 800px;">
+        Functional mushrooms are tools for presence. Whether you're summiting a peak, sitting around a campfire with friends, or just trying to focus without getting hijacked by notifications — we've got you.
       </p>
-      <a href="#" onclick="openModal(); return false;" class="btn btn-primary btn-lg">Buy</a>
+      <p class="mx-auto mb-2xl" style="max-width: 700px; color: var(--color-light-gray);">
+        Disconnect from the noise. Reconnect with what matters.
+      </p>
+      <a href="#" onclick="openModal(); return false;" class="btn btn-primary btn-lg">Join the Movement</a>
     </div>
   </section>
 
@@ -277,8 +405,8 @@
         <div>
           <h4 class="footer-section-title">Explore</h4>
           <a href="beverages.html" class="footer-link">Beverages</a>
-          <a href="index.html#mushrooms" class="footer-link">The Science</a>
-          <a href="index.html#partners" class="footer-link">Partners</a>
+          <a href="mushroom-science.html" class="footer-link">The Science</a>
+          <a href="partners.html" class="footer-link">Partners</a>
           <a href="index.html#community" class="footer-link">Community Map</a>
         </div>
 
@@ -339,6 +467,24 @@
 
   <script src="script.js"></script>
   <script>
+    // Hamburger Menu Toggle
+    function toggleMenu() {
+      const hamburger = document.querySelector('.hamburger-menu');
+      const menuOverlay = document.querySelector('.menu-overlay');
+      const backdrop = document.querySelector('.menu-backdrop');
+
+      hamburger.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+      backdrop.classList.toggle('active');
+
+      // Prevent body scroll when menu is open
+      if (menuOverlay.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
+    }
+
     function openModal() {
       document.getElementById('preReleaseModal').style.display = 'flex';
       document.body.style.overflow = 'hidden';
