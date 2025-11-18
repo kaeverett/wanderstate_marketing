@@ -53,6 +53,91 @@
         height: 120px !important;
       }
     }
+
+    /* Hamburger Menu Styles */
+    .hamburger-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 10px;
+      z-index: 1001;
+    }
+
+    .hamburger-menu span {
+      width: 25px;
+      height: 3px;
+      background-color: #2C4161;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger-menu.active span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .hamburger-menu.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger-menu.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 300px;
+      height: 100vh;
+      background: linear-gradient(to bottom, #FBF9F5 0%, #FFFFFF 100%);
+      box-shadow: -2px 0 12px rgba(47, 79, 63, 0.15);
+      transition: right 0.3s ease;
+      z-index: 1000;
+      padding: 80px 2rem 2rem;
+    }
+
+    .menu-overlay.active {
+      right: 0;
+    }
+
+    .menu-overlay nav {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .menu-overlay a {
+      color: #2C4161;
+      text-decoration: none;
+      font-size: 1.25rem;
+      font-weight: 400;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(44, 65, 97, 0.1);
+      transition: color 0.2s ease;
+    }
+
+    .menu-overlay a:hover {
+      color: var(--color-primary-forest);
+    }
+
+    .menu-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 999;
+    }
+
+    .menu-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+    }
   </style>
 </head>
 <body>
@@ -69,12 +154,32 @@
     </div>
     <div class="nav hide-mobile">
       <a href="beverages.html" class="nav-link">Beverages</a>
-      <a href="#mushrooms" class="nav-link">The Science</a>
-      <a href="#community" class="nav-link">Community</a>
-      <a href="#partners" class="nav-link">Partners</a>
+      <a href="#mushrooms" class="nav-link" style="text-align: center; line-height: 1.2;">Mushroom<br>Science</a>
+      <a href="#community" class="nav-link" style="text-align: center; line-height: 1.2;">Where We<br>Wander</a>
+      <a href="#partners" class="nav-link" style="text-align: center; line-height: 1.2;">Friends &<br>Partners</a>
     </div>
     <a href="#" onclick="openModal(); return false;" class="btn btn-primary btn-sm hide-mobile">Buy</a>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </nav>
+
+  <!-- Menu Backdrop -->
+  <div class="menu-backdrop" onclick="toggleMenu()"></div>
+
+  <!-- Menu Overlay -->
+  <div class="menu-overlay">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="beverages.html">Beverages</a>
+      <a href="index.html#mushrooms">Mushroom Science</a>
+      <a href="index.html#community">Where We Wander</a>
+      <a href="index.html#partners">Friends & Partners</a>
+      <a href="#" onclick="openModal(); return false;" style="border: 2px solid #2C4161; text-align: center; border-radius: 8px; padding: 0.75rem 1.5rem;">Buy</a>
+    </nav>
+  </div>
 
   <!-- Hero Section -->
   <section class="hero" style="background: transparent; min-height: 600px;">
@@ -106,10 +211,10 @@
 
     <div class="product-grid">
       <!-- Product 1: Morning Clarity -->
-      <div class="product-card" style="border-color: var(--color-secondary-lemon);">
+      <div class="product-card" style="border-color: var(--color-secondary-mint);">
         <img src="docs/assets/Brand Assets/Packaging Templates/Lemont & Mint/Lemon & Mint Can Mockup.png" alt="Lemon & Mint Can" class="product-image" style="width: 100%; max-width: 250px; height: auto; margin: 0 auto 1.5rem; display: block;">
-        <span class="product-benefit">Morning Clarity</span>
         <h3 class="product-name">Lemon & Mint</h3>
+        <span class="product-benefit">Morning Clarity</span>
         <p class="product-description">
           Bright, zesty, and ready to tackle your to-do list. Lion's Mane for focus without the jitters.
         </p>
@@ -119,8 +224,8 @@
       <!-- Product 2: Evening Unwind -->
       <div class="product-card" style="border-color: var(--color-secondary-lavender);">
         <img src="docs/assets/Brand Assets/Packaging Templates/Chamomile & Blackberry/Chamomile Can Mockup.png" alt="Chamomile & Blackberry Can" class="product-image" style="width: 100%; max-width: 250px; height: auto; margin: 0 auto 1.5rem; display: block;">
-        <span class="product-benefit">Evening Unwind</span>
         <h3 class="product-name">Chamomile & Blackberry</h3>
+        <span class="product-benefit">Evening Unwind</span>
         <p class="product-description">
           Your chill-out ritual in a can. Reishi helps you decompress without the sleep-inducing haze.
         </p>
@@ -128,10 +233,10 @@
       </div>
 
       <!-- Product 3: Movement & Endurance -->
-      <div class="product-card" style="border-color: var(--color-secondary-mint);">
+      <div class="product-card" style="border-color: var(--color-secondary-lemon);">
         <img src="docs/assets/Brand Assets/Packaging Templates/Yuzu & Cucumber/Yuzu & Cucumber Can Mockup.png" alt="Yuzu & Cucumber Can" class="product-image" style="width: 100%; max-width: 250px; height: auto; margin: 0 auto 1.5rem; display: block;">
-        <span class="product-benefit">Movement & Endurance</span>
         <h3 class="product-name">Yuzu & Cucumber</h3>
+        <span class="product-benefit">Movement & Endurance</span>
         <p class="product-description">
           Light, refreshing, and built for the trail. Cordyceps fuels your endurance naturally.
         </p>
@@ -141,8 +246,8 @@
       <!-- Product 4: Social & Celebrations -->
       <div class="product-card" style="border-color: var(--color-secondary-coral);">
         <img src="docs/assets/Brand Assets/Packaging Templates/Hibiscus & Blood Orange/Can-Mockup_hibiscus_110225.png" alt="Hibiscus & Blood Orange Can" class="product-image" style="width: 100%; max-width: 250px; height: auto; margin: 0 auto 1.5rem; display: block;">
-        <span class="product-benefit">Social & Celebrations</span>
         <h3 class="product-name">Hibiscus & Blood Orange</h3>
+        <span class="product-benefit">Social & Celebrations</span>
         <p class="product-description">
           Tart, bold, and party-ready. A sophisticated non-alcoholic aperitif with Lion's Mane for flow.
         </p>
@@ -402,6 +507,24 @@
 
   <script src="script.js"></script>
   <script>
+    // Hamburger Menu Toggle
+    function toggleMenu() {
+      const hamburger = document.querySelector('.hamburger-menu');
+      const menuOverlay = document.querySelector('.menu-overlay');
+      const backdrop = document.querySelector('.menu-backdrop');
+
+      hamburger.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+      backdrop.classList.toggle('active');
+
+      // Prevent body scroll when menu is open
+      if (menuOverlay.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
+    }
+
     function openModal() {
       document.getElementById('preReleaseModal').style.display = 'flex';
       document.body.style.overflow = 'hidden';
