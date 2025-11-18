@@ -6,21 +6,64 @@
   <meta name="description" content="WANDER STATE - Functional mushroom sparkling tea for clarity, calm, and vitality. Real ingredients, zero BS.">
   <title>WANDER STATE | Mushroom-Powered Sparkling Tea</title>
   <link rel="stylesheet" href="olipop_meets_lacroix_styleguide.css">
+  <style>
+    /* Mobile Optimizations */
+    @media (max-width: 767px) {
+      /* Smaller logo on mobile */
+      .mobile-logo {
+        height: 100px !important;
+      }
+
+      /* Hide "Functional Sparkling Teas" text on very small screens */
+      .mobile-hide-tagline {
+        display: none !important;
+      }
+
+      /* Stack hero section vertically on mobile */
+      .mobile-hero-container {
+        flex-direction: column !important;
+        gap: 2rem !important;
+      }
+
+      .mobile-hero-text,
+      .mobile-hero-image {
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
+      }
+
+      /* Adjust heading sizes for mobile */
+      .mobile-hero-heading {
+        font-size: 2rem !important;
+      }
+
+      .mobile-hero-subheading {
+        font-size: 1.5rem !important;
+      }
+
+      /* Adjust nav spacing on mobile */
+      .mobile-nav {
+        margin-bottom: 1rem !important;
+        border-radius: 0 !important;
+      }
+    }
+
+    /* Tablet adjustments */
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .mobile-logo {
+        height: 120px !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <!-- Navigation -->
-  <nav class="nav container" style="padding-top: 1.5rem; padding-bottom: 1.5rem;">
+  <nav class="nav container mobile-nav" style="padding-top: 1.5rem; padding-bottom: 1.5rem; background: linear-gradient(to bottom, #FBF9F5 0%, #FFFFFF 100%); margin-bottom: 1.5rem; border-radius: 0 0 16px 16px; box-shadow: 0 2px 12px rgba(47, 79, 63, 0.04);">
     <div style="flex: 1;">
-      <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 1rem;">
-        <img src="docs/assets/Brand Assets/Logos/Lemont & Mint/WS_green-tea_web.png" alt="Wander State Logo" style="height: 80px; width: auto;">
-        <div>
-          <div style="font-family: 'TAY Birdie', cursive; font-size: 2rem; font-weight: normal; color: var(--color-primary-forest); line-height: 1.2;">
-            WANDER STATE
-          </div>
-          <div style="font-family: var(--font-family-primary); font-size: 0.875rem; font-weight: 300; color: var(--color-primary-forest); margin-top: 0.25rem; letter-spacing: 0.02em;">
-            Nourish Your Journey
-          </div>
+      <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 1.5rem;">
+        <img src="docs/assets/Brand Assets/Logos/Wander State/png/WS_Wordmark-with-Star.png" alt="Wander State Logo" class="mobile-logo" style="height: 160px; width: auto;">
+        <div class="mobile-hide-tagline" style="font-family: 'Thirsty Rough', serif; font-size: 1.5rem; color: #2C4161; line-height: 1.2;">
+          Functional Sparkling Teas
         </div>
       </a>
     </div>
@@ -35,12 +78,12 @@
 
   <!-- Hero Section -->
   <section class="hero" style="background: transparent; min-height: 600px;">
-    <div class="container" style="display: flex; align-items: center; gap: var(--space-3xl); position: relative; z-index: 2;">
+    <div class="container mobile-hero-container" style="display: flex; align-items: center; gap: var(--space-3xl); position: relative; z-index: 2;">
       <!-- Left side: Text -->
-      <div style="flex: 0 0 40%; max-width: 40%;">
-        <h2 class="mb-lg" style="font-family: 'TAY Birdie', cursive; color: var(--color-primary-forest); line-height: 1.3; text-align: left;">
-          <div style="font-weight: bold; font-size: 2.5rem; margin-bottom: 0.5rem;">WANDER.</div>
-          <div style="font-size: 2rem; font-weight: normal;">Stay Curious. Explore. Connect.</div>
+      <div class="mobile-hero-text" style="flex: 0 0 40%; max-width: 40%;">
+        <h2 class="mb-lg" style="font-family: 'TAY Birdie', cursive; color: #2C4161; line-height: 1.3; text-align: left;">
+          <div class="mobile-hero-heading" style="font-weight: bold; font-size: 2.5rem; margin-bottom: 0.5rem;">WANDER.</div>
+          <div class="mobile-hero-subheading" style="font-size: 2rem; font-weight: normal;">Stay Curious. Explore. Connect.</div>
         </h2>
         <p class="lead" style="max-width: 100%;">
           Using the highest-quality functional mushrooms and premium ingredients, we crafted these crisp, energizing teas to nourish your mind and body on life's journey.
@@ -51,7 +94,7 @@
       </div>
 
       <!-- Right side: Image -->
-      <div style="flex: 0 0 55%; max-width: 55%;">
+      <div class="mobile-hero-image" style="flex: 0 0 55%; max-width: 55%;">
         <img src="docs/assets/Brand Assets/Lifestyle Images/hikers.png" alt="Hikers" style="width: 100%; height: auto; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg);">
       </div>
     </div>
@@ -59,7 +102,7 @@
 
   <!-- Product Teaser Section -->
   <section class="container pb-7xl">
-    <h2 class="thirsty-rough text-center mb-2xl" style="font-size: var(--font-size-4xl); color: var(--color-primary-forest);">Our Functional Sparkling Teas</h2>
+    <h2 class="thirsty-rough text-center mb-2xl" style="font-size: var(--font-size-4xl); color: #2C4161;">Our Functional Sparkling Teas</h2>
 
     <div class="product-grid">
       <!-- Product 1: Morning Clarity -->

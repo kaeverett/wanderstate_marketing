@@ -6,26 +6,45 @@
   <meta name="description" content="Explore WANDER STATE's sparkling mushroom tea collection. Real tea, functional mushrooms, zero added sugar.">
   <title>Beverages | WANDER STATE</title>
   <link rel="stylesheet" href="olipop_meets_lacroix_styleguide.css">
+  <style>
+    /* Mobile Optimizations */
+    @media (max-width: 767px) {
+      /* Smaller logo on mobile */
+      .mobile-logo {
+        height: 100px !important;
+      }
+
+      /* Hide "Functional Sparkling Teas" text on very small screens */
+      .mobile-hide-tagline {
+        display: none !important;
+      }
+
+      /* Adjust nav spacing on mobile */
+      .mobile-nav {
+        margin-bottom: 1rem !important;
+        border-radius: 0 !important;
+      }
+    }
+
+    /* Tablet adjustments */
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .mobile-logo {
+        height: 120px !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <!-- Navigation -->
-  <nav class="nav container" style="padding-top: 1.5rem; padding-bottom: 1.5rem;">
-    <div style="flex: 1; display: flex; align-items: center; gap: 2rem;">
-      <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 1rem;">
-        <img src="docs/assets/Brand Assets/Logos/Lemont & Mint/WS_green-tea_web.png" alt="Wander State Logo" style="height: 60px; width: auto;">
-        <div>
-          <div style="font-family: 'TAY Birdie', cursive; font-size: 2rem; font-weight: normal; color: var(--color-primary-forest); line-height: 1.2;">
-            WANDER STATE
-          </div>
-          <div style="font-family: var(--font-family-primary); font-size: 0.875rem; font-weight: 300; color: var(--color-primary-forest); margin-top: 0.25rem; letter-spacing: 0.02em;">
-            Nourish Your Journey
-          </div>
+  <nav class="nav container mobile-nav" style="padding-top: 1.5rem; padding-bottom: 1.5rem; background: linear-gradient(to bottom, #FBF9F5 0%, #FFFFFF 100%); margin-bottom: 1.5rem; border-radius: 0 0 16px 16px; box-shadow: 0 2px 12px rgba(47, 79, 63, 0.04);">
+    <div style="flex: 1;">
+      <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 1.5rem;">
+        <img src="docs/assets/Brand Assets/Logos/Wander State/png/WS_Wordmark-with-Star.png" alt="Wander State Logo" class="mobile-logo" style="height: 160px; width: auto;">
+        <div class="mobile-hide-tagline" style="font-family: 'Thirsty Rough', serif; font-size: 1.5rem; color: #2C4161; line-height: 1.2;">
+          Functional Sparkling Teas
         </div>
       </a>
-      <div class="thirsty-rough hide-mobile" style="font-size: 1.75rem; color: var(--color-primary-forest); letter-spacing: 0.05em;">
-        Functional Sparkling Tea
-      </div>
     </div>
     <div class="nav hide-mobile">
       <a href="beverages.html" class="nav-link active">Beverages</a>
