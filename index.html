@@ -10,40 +10,45 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="nav container" style="padding-top: 1.5rem; padding-bottom: 1.5rem;">
+  <nav class="nav container" style="padding-top: 1.5rem; padding-bottom: 1.5rem; background-color: var(--color-secondary-mint); margin-left: 0; margin-right: 0; max-width: 100%; border-radius: 0;">
     <div style="flex: 1; display: flex; align-items: center; gap: 2rem;">
       <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 1rem;">
         <img src="docs/assets/Brand Assets/Logos/Lemont & Mint/WS_green-tea_web.png" alt="Wander State Logo" style="height: 60px; width: auto;">
         <div>
-          <div style="font-family: 'TAY Birdie', cursive; font-size: 2rem; font-weight: normal; color: var(--color-primary-forest); line-height: 1.2;">
+          <div style="font-family: 'TAY Birdie', cursive; font-size: 2rem; font-weight: normal; color: var(--color-white); line-height: 1.2;">
             WANDER STATE
           </div>
-          <div style="font-family: var(--font-family-primary); font-size: 0.875rem; font-weight: 300; color: var(--color-primary-forest); margin-top: 0.25rem; letter-spacing: 0.02em;">
+          <div style="font-family: var(--font-family-primary); font-size: 0.875rem; font-weight: 300; color: var(--color-white); margin-top: 0.25rem; letter-spacing: 0.02em;">
             Nourish Your Journey
           </div>
         </div>
       </a>
-      <div class="thirsty-rough hide-mobile" style="font-size: 1.75rem; color: var(--color-primary-forest); letter-spacing: 0.05em;">
+      <div class="thirsty-rough hide-mobile" style="font-size: 1.75rem; color: var(--color-white); letter-spacing: 0.05em;">
         Functional Sparkling Tea
       </div>
     </div>
     <div class="nav hide-mobile">
-      <a href="beverages.html" class="nav-link">Beverages</a>
-      <a href="#mushrooms" class="nav-link">The Science</a>
-      <a href="#community" class="nav-link">Community</a>
-      <a href="#partners" class="nav-link">Partners</a>
+      <a href="beverages.html" class="nav-link" style="color: var(--color-white);">Beverages</a>
+      <a href="#mushrooms" class="nav-link" style="color: var(--color-white);">The Science</a>
+      <a href="#community" class="nav-link" style="color: var(--color-white);">Community</a>
+      <a href="#partners" class="nav-link" style="color: var(--color-white);">Partners</a>
     </div>
     <a href="#" onclick="openModal(); return false;" class="btn btn-primary btn-sm hide-mobile">Buy</a>
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="container" style="position: relative; z-index: 2;">
-      <h1 class="thirsty-rough" style="font-size: 3.5rem; color: var(--color-white); text-align: center; margin-bottom: var(--space-xl); text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
-        Functional Sparkling Tea
-      </h1>
-      <div style="width: 100%; max-width: 1200px; margin: 0 auto;">
-        <img src="docs/assets/Brand Assets/Lifestyle Images/hikers.png" alt="Hikers" style="width: 100%; height: auto; border-radius: var(--radius-xl); box-shadow: var(--shadow-2xl);">
+  <section class="hero" style="background: var(--color-white); min-height: 600px;">
+    <div class="container" style="display: flex; align-items: center; gap: var(--space-3xl); position: relative; z-index: 2;">
+      <!-- Left side: Text -->
+      <div style="flex: 0 0 40%; max-width: 40%;">
+        <h1 class="thirsty-rough" style="font-size: 4rem; color: var(--color-primary-forest); line-height: 1.1; margin: 0;">
+          Functional<br>Sparkling Tea
+        </h1>
+      </div>
+
+      <!-- Right side: Image -->
+      <div style="flex: 0 0 55%; max-width: 55%;">
+        <img src="docs/assets/Brand Assets/Lifestyle Images/hikers.png" alt="Hikers" style="width: 100%; height: auto; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg);">
       </div>
     </div>
   </section>
