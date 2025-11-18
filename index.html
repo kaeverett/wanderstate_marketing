@@ -19,9 +19,9 @@
         display: none !important;
       }
 
-      /* Stack hero section vertically on mobile */
+      /* Stack hero section vertically on mobile with image on top */
       .mobile-hero-container {
-        flex-direction: column !important;
+        flex-direction: column-reverse !important;
         gap: 2rem !important;
       }
 
@@ -42,8 +42,13 @@
 
       /* Adjust nav spacing on mobile */
       .mobile-nav {
-        margin-bottom: 1rem !important;
+        margin-bottom: 0.5rem !important;
         border-radius: 0 !important;
+      }
+
+      /* Left-align hero text on mobile */
+      .mobile-text-left {
+        text-align: left !important;
       }
     }
 
@@ -143,7 +148,7 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="nav container mobile-nav" style="padding-top: 1.5rem; padding-bottom: 1.5rem; background: linear-gradient(to bottom, #FBF9F5 0%, #FFFFFF 100%); margin-bottom: 1.5rem; border-radius: 0 0 16px 16px; box-shadow: 0 2px 12px rgba(47, 79, 63, 0.04);">
+  <nav class="nav container mobile-nav" style="padding-top: 1.5rem; padding-bottom: 1.5rem; background: linear-gradient(to bottom, #FBF9F5 0%, #FFFFFF 100%); margin-bottom: 0.75rem; border-radius: 0 0 16px 16px; box-shadow: 0 2px 12px rgba(47, 79, 63, 0.04);">
     <div style="flex: 1;">
       <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 1.5rem;">
         <img src="docs/assets/Brand Assets/Logos/Wander State/png/WS_Wordmark-with-Star.png" alt="Wander State Logo" class="mobile-logo" style="height: 160px; width: auto;">
@@ -190,10 +195,10 @@
           <div class="mobile-hero-heading" style="font-weight: bold; font-size: 2.5rem; margin-bottom: 0.5rem;">WANDER.</div>
           <div class="mobile-hero-subheading" style="font-size: 2rem; font-weight: normal;">Stay Curious. Explore. Connect.</div>
         </h2>
-        <p class="lead" style="max-width: 100%;">
+        <p class="lead mobile-text-left" style="max-width: 100%;">
           Using the highest-quality functional mushrooms and premium ingredients, we crafted these crisp, energizing teas to nourish your mind and body on life's journey.
         </p>
-        <p class="lead" style="max-width: 100%; margin-top: var(--space-md);">
+        <p class="lead mobile-text-left" style="max-width: 100%; margin-top: var(--space-md);">
           Wherever your path leads, we're grateful to Wander with you.
         </p>
       </div>
