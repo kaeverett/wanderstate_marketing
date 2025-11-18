@@ -10,25 +10,33 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="nav container" style="padding-top: 1.5rem; padding-bottom: 1.5rem; background-color: var(--color-primary-forest); margin-left: 0; margin-right: 0; max-width: 100%; border-radius: 0;">
-    <div style="flex: 1;">
+  <nav class="nav container" style="padding-top: 1.5rem; padding-bottom: 1.5rem; background-color: var(--color-white);">
+    <!-- Left: Functional Sparkling Tea -->
+    <div class="thirsty-rough hide-mobile" style="font-size: 1.5rem; color: var(--color-primary-forest); letter-spacing: 0.05em;">
+      Functional Sparkling Tea
+    </div>
+
+    <!-- Center: Logo + WANDER STATE + Nourish Your Journey -->
+    <div style="position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 1rem;">
       <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 1rem;">
-        <img src="docs/assets/Brand Assets/Logos/Lemont & Mint/WS_green-tea_web.png" alt="Wander State Logo" style="height: 60px; width: auto;">
+        <img src="docs/assets/Brand Assets/Logos/Lemont & Mint/WS_green-tea_web.png" alt="Wander State Logo" style="height: 80px; width: auto;">
         <div>
-          <div style="font-family: 'TAY Birdie', cursive; font-size: 2rem; font-weight: normal; color: var(--color-white); line-height: 1.2;">
+          <div style="font-family: 'TAY Birdie', cursive; font-size: 2rem; font-weight: normal; color: var(--color-primary-forest); line-height: 1.2;">
             WANDER STATE
           </div>
-          <div style="font-family: var(--font-family-primary); font-size: 0.875rem; font-weight: 300; color: var(--color-white); margin-top: 0.25rem; letter-spacing: 0.02em;">
+          <div style="font-family: var(--font-family-primary); font-size: 0.875rem; font-weight: 300; color: var(--color-primary-forest); margin-top: 0.25rem; letter-spacing: 0.02em;">
             Nourish Your Journey
           </div>
         </div>
       </a>
     </div>
-    <div class="nav hide-mobile">
-      <a href="beverages.html" class="nav-link" style="color: var(--color-white);">Beverages</a>
-      <a href="#mushrooms" class="nav-link" style="color: var(--color-white);">The Science</a>
-      <a href="#community" class="nav-link" style="color: var(--color-white);">Community</a>
-      <a href="#partners" class="nav-link" style="color: var(--color-white);">Partners</a>
+
+    <!-- Right: Nav Links -->
+    <div class="nav hide-mobile" style="margin-left: auto;">
+      <a href="beverages.html" class="nav-link">Beverages</a>
+      <a href="#mushrooms" class="nav-link">The Science</a>
+      <a href="#community" class="nav-link">Community</a>
+      <a href="#partners" class="nav-link">Partners</a>
     </div>
     <a href="#" onclick="openModal(); return false;" class="btn btn-primary btn-sm hide-mobile">Buy</a>
   </nav>
