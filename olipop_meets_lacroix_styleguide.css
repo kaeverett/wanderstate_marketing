@@ -1029,7 +1029,21 @@ input[type="radio"] {
   }
 }
 
+/* Hero brand name - WANDER */
+.hero-brand {
+  font-family: var(--font-family-accent);
+  font-size: 4rem;
+  color: var(--color-primary-forest);
+  margin-bottom: var(--space-md);
+  font-weight: normal;
+  line-height: 1;
+}
+
 @media (min-width: 768px) {
+  .hero-brand {
+    font-size: 6rem; /* Extra large on desktop for prominence */
+  }
+
   .hero-title {
     font-size: var(--font-size-5xl);
   }
