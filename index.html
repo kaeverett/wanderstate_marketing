@@ -60,9 +60,9 @@
       body {
         background-color: var(--color-cream) !important;
         background-image: url('docs/assets/Brand%20Assets/Color%20Palettes/mountain%20background%20png.png') !important;
-        background-size: cover !important;
+        background-size: 100% auto !important;
         background-position: top center !important;
-        background-repeat: no-repeat !important;
+        background-repeat: repeat !important;
         background-attachment: scroll !important;
         min-height: 100vh !important;
         height: auto !important;
@@ -78,13 +78,18 @@
         background: transparent !important;
       }
 
-      /* For sections that need some background, make them semi-transparent */
+      /* For sections that need some background, make them very transparent */
       .bg-cream,
       .bg-gradient-mint,
       .bg-gradient-earth,
       .bg-gradient-sunset,
       .bg-gradient-forest {
-        background: rgba(250, 248, 245, 0.8) !important;
+        background: rgba(250, 248, 245, 0.5) !important;
+      }
+
+      /* Ensure hero and other sections don't block background */
+      .hero {
+        background: transparent !important;
       }
     }
 
