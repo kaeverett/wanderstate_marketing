@@ -50,6 +50,20 @@
       .mobile-text-left {
         text-align: left !important;
       }
+
+      /* Ensure sections without explicit backgrounds are transparent on mobile */
+      section.container {
+        background: transparent !important;
+      }
+
+      /* Ensure body background is visible on mobile */
+      body {
+        background-image: url('docs/assets/Brand Assets/Color Palettes/mountain background png.png') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-attachment: scroll !important;
+      }
     }
 
     /* Tablet adjustments */
