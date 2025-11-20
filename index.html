@@ -52,13 +52,20 @@
       }
 
       /* Make all backgrounds transparent or semi-transparent on mobile to show mountain background */
-      body, html {
+      html {
+        height: 100%;
+        min-height: 100vh !important;
+      }
+
+      body {
+        background-color: var(--color-cream) !important;
         background-image: url('docs/assets/Brand%20Assets/Color%20Palettes/mountain%20background%20png.png') !important;
         background-size: cover !important;
-        background-position: center !important;
+        background-position: center top !important;
         background-repeat: no-repeat !important;
         background-attachment: scroll !important;
-        min-height: 100% !important;
+        min-height: 100vh !important;
+        height: auto !important;
       }
 
       /* Make nav semi-transparent on mobile */
