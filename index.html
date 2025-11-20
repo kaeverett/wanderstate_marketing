@@ -19,9 +19,9 @@
         display: none !important;
       }
 
-      /* Stack hero section vertically on mobile with image on top */
+      /* Stack hero section vertically on mobile with image below text */
       .mobile-hero-container {
-        flex-direction: column-reverse !important;
+        flex-direction: column !important;
         gap: 2rem !important;
       }
 
@@ -205,7 +205,7 @@
 
       <!-- Right side: Image -->
       <div class="mobile-hero-image" style="flex: 0 0 55%; max-width: 55%;">
-        <img src="docs/assets/Brand Assets/Logos/Chamomile & Blackberry/WS_chamomile_web.png" alt="Wander State Chamomile Tea" style="width: 100%; height: auto; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg);">
+        <img src="docs/assets/Brand Assets/Logos/Chamomile & Blackberry/WS_chamomile_web.png" alt="Wander State Chamomile Tea" style="width: 75%; height: auto; margin: 0 auto; display: block;">
       </div>
     </div>
   </section>
@@ -216,36 +216,36 @@
 
     <div class="product-grid">
       <!-- Product 1: Morning Clarity -->
-      <div class="product-card" style="border-color: var(--color-secondary-mint);">
+      <div class="product-card" style="border-color: var(--color-secondary-mint); cursor: pointer;" onclick="window.location.href='beverages.html#lemon-mint';">
         <img src="docs/assets/Brand Assets/Packaging Templates/Lemont & Mint/Lemon & Mint Can Mockup.png" alt="Lemon & Mint Can" class="product-image" style="width: 100%; max-width: 250px; height: auto; margin: 0 auto 1.5rem; display: block;">
         <h3 class="product-name">Lemon & Mint</h3>
         <span class="product-benefit">Morning Clarity</span>
         <p class="product-description">
           Bright, zesty, and ready to tackle your to-do list. Lion's Mane for focus without the jitters.
         </p>
-        <a href="beverages.html" class="btn btn-outline btn-sm">View Beverage</a>
+        <a href="#" onclick="event.stopPropagation(); openModal(); return false;" class="btn btn-outline btn-sm">Buy</a>
       </div>
 
       <!-- Product 2: Evening Unwind -->
-      <div class="product-card" style="border-color: var(--color-secondary-lavender);">
+      <div class="product-card" style="border-color: var(--color-secondary-lavender); cursor: pointer;" onclick="window.location.href='beverages.html#chamomile-blackberry';">
         <img src="docs/assets/Brand Assets/Packaging Templates/Chamomile & Blackberry/Chamomile Can Mockup.png" alt="Chamomile & Blackberry Can" class="product-image" style="width: 100%; max-width: 250px; height: auto; margin: 0 auto 1.5rem; display: block;">
         <h3 class="product-name">Chamomile & Blackberry</h3>
         <span class="product-benefit">Evening Unwind</span>
         <p class="product-description">
           Your chill-out ritual in a can. Reishi helps you decompress without the sleep-inducing haze.
         </p>
-        <a href="beverages.html" class="btn btn-outline btn-sm">View Beverage</a>
+        <a href="#" onclick="event.stopPropagation(); openModal(); return false;" class="btn btn-outline btn-sm">Buy</a>
       </div>
 
       <!-- Product 3: Movement & Endurance -->
-      <div class="product-card" style="border-color: var(--color-secondary-lemon);">
+      <div class="product-card" style="border-color: var(--color-secondary-lemon); cursor: pointer;" onclick="window.location.href='beverages.html#yuzu-cucumber';">
         <img src="docs/assets/Brand Assets/Packaging Templates/Yuzu & Cucumber/Yuzu & Cucumber Can Mockup.png" alt="Yuzu & Cucumber Can" class="product-image" style="width: 100%; max-width: 250px; height: auto; margin: 0 auto 1.5rem; display: block;">
         <h3 class="product-name">Yuzu & Cucumber</h3>
         <span class="product-benefit">Movement & Endurance</span>
         <p class="product-description">
           Light, refreshing, and built for the trail. Cordyceps fuels your endurance naturally.
         </p>
-        <a href="beverages.html" class="btn btn-outline btn-sm">View Beverage</a>
+        <a href="#" onclick="event.stopPropagation(); openModal(); return false;" class="btn btn-outline btn-sm">Buy</a>
       </div>
 
       <!-- Product 4: Social & Celebrations -->
