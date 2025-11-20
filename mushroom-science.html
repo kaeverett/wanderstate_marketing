@@ -33,6 +33,35 @@
       .grid-cols-2 {
         grid-template-columns: 1fr !important;
       }
+
+      /* Make all backgrounds transparent or semi-transparent on mobile to show mountain background */
+      body, html {
+        background-image: url('docs/assets/Brand%20Assets/Color%20Palettes/mountain%20background%20png.png') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-attachment: scroll !important;
+        min-height: 100% !important;
+      }
+
+      /* Make nav semi-transparent on mobile */
+      .nav {
+        background: rgba(251, 249, 245, 0.95) !important;
+      }
+
+      /* Make all sections transparent or semi-transparent */
+      section {
+        background: transparent !important;
+      }
+
+      /* For sections that need some background, make them semi-transparent */
+      .bg-cream,
+      .bg-gradient-mint,
+      .bg-gradient-earth,
+      .bg-gradient-sunset,
+      .bg-gradient-forest {
+        background: rgba(250, 248, 245, 0.8) !important;
+      }
     }
 
     @media (min-width: 768px) and (max-width: 1024px) {
