@@ -206,6 +206,13 @@ body {
   overflow-x: hidden;
 }
 
+/* Mobile fix for background - fixed attachment doesn't work well on mobile */
+@media (max-width: 767px) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
 /* ============================================
    TYPOGRAPHY SYSTEM
    ============================================ */
