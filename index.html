@@ -7,101 +7,118 @@
   <title>WANDER STATE | Mushroom-Powered Sparkling Tea</title>
   <link rel="stylesheet" href="olipop_meets_lacroix_styleguide.css">
   <style>
-    /* Mobile Optimizations */
-    @media (max-width: 767px) {
-      /* Smaller logo on mobile */
-      .mobile-logo {
-        height: 100px !important;
-      }
+    /* ============================================
+       MOBILE-FIRST STYLES
+       Base styles are for mobile, then scale up
+       ============================================ */
 
-      /* Hide "Functional Sparkling Teas" text on very small screens */
-      .mobile-hide-tagline {
-        display: none !important;
-      }
-
-      /* Stack hero section vertically on mobile with image below text */
-      .mobile-hero-container {
-        flex-direction: column !important;
-        gap: 1.5rem !important;
-      }
-
-      .mobile-hero-text,
-      .mobile-hero-image {
-        flex: 1 1 100% !important;
-        max-width: 100% !important;
-      }
-
-      /* Ensure badge mask and cropping work on mobile */
-      .mobile-hero-image .hero-badge-image {
-        object-position: center 29% !important;
-        max-height: 270px !important;
-        height: 270px !important;
-        min-height: 270px !important;
-        width: 100% !important;
-        object-fit: cover !important;
-      }
-
-      .mobile-hero-image > div {
-        width: 85% !important;
-        max-width: 320px !important;
-        height: 270px !important;
-        overflow: hidden !important;
-      }
-
-      /* Adjust heading sizes for mobile */
-      .mobile-hero-heading {
-        font-size: 2rem !important;
-      }
-
-      .mobile-hero-subheading {
-        font-size: 1.5rem !important;
-      }
-
-      /* Adjust nav spacing on mobile */
-      .mobile-nav {
-        margin-bottom: 0 !important;
-        border-radius: 0 !important;
-      }
-
-      /* Reduce hero section spacing on mobile */
-      section.hero {
-        padding-top: 1rem !important;
-        padding-bottom: 2rem !important;
-        min-height: 0 !important;
-      }
-
-      /* Left-align hero text on mobile */
-      .mobile-text-left {
-        text-align: left !important;
-      }
-
-      /* Make all backgrounds transparent or semi-transparent on mobile to show mountain background */
-      html {
-        height: 100%;
-        min-height: 100vh !important;
-      }
-
-      body {
-        background-color: #FFFFFF !important;
-        background-image: none !important;
-        min-height: 100vh !important;
-        height: auto !important;
-      }
-
-      /* Restore normal nav on mobile */
-      .nav {
-        background: linear-gradient(to bottom, #FBF9F5 0%, #FFFFFF 100%) !important;
-      }
+    /* Navigation - Mobile Base */
+    .site-nav {
+      padding: 1rem 0;
+      background: linear-gradient(to bottom, #FBF9F5 0%, #FFFFFF 100%);
+      margin-bottom: 0;
+      border-radius: 0;
+      box-shadow: 0 2px 12px rgba(47, 79, 63, 0.04);
     }
 
-    /* Tablet adjustments */
-    @media (min-width: 768px) and (max-width: 1024px) {
-      .mobile-logo {
-        height: 120px !important;
-      }
+    .nav-logo-container {
+      flex: 1;
     }
 
-    /* Hamburger Menu Styles */
+    .nav-logo-link {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-logo {
+      height: 100px;
+      width: auto;
+    }
+
+    .nav-tagline {
+      font-family: 'Thirsty Rough', serif;
+      font-size: 1.25rem;
+      color: #2C4161;
+      line-height: 1.2;
+    }
+
+    /* Hero Section - Mobile Base */
+    .hero-section {
+      background: transparent;
+      padding: 1.5rem 0 2rem;
+      min-height: 0;
+    }
+
+    .hero-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .hero-text {
+      width: 100%;
+      text-align: left;
+    }
+
+    .hero-heading {
+      font-family: 'TAY Birdie', cursive;
+      color: #2C4161;
+      line-height: 1.3;
+      margin-bottom: var(--space-lg);
+    }
+
+    .hero-title {
+      font-weight: bold;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      font-weight: normal;
+    }
+
+    .hero-description {
+      max-width: 100%;
+      text-align: left;
+    }
+
+    /* Hero Image - Mobile Base */
+    .hero-image-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image-wrapper {
+      position: relative;
+      width: 85%;
+      max-width: 320px;
+      height: 270px;
+      overflow: hidden;
+    }
+
+    .hero-badge-image {
+      width: 100%;
+      height: 270px;
+      display: block;
+      object-fit: cover;
+      object-position: center 30%;
+      -webkit-mask-image: url('docs/assets/Brand Assets/Logos/Chamomile & Blackberry/WS_chamomile_web.png');
+      -webkit-mask-size: 100% 100%;
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      mask-image: url('docs/assets/Brand Assets/Logos/Chamomile & Blackberry/WS_chamomile_web.png');
+      mask-size: 100% 100%;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      filter: drop-shadow(0 10px 25px rgba(47, 79, 63, 0.25));
+    }
+
+    /* Hamburger Menu */
     .hamburger-menu {
       display: flex;
       flex-direction: column;
@@ -131,6 +148,7 @@
       transform: rotate(-45deg) translate(7px, -7px);
     }
 
+    /* Mobile Menu Overlay */
     .menu-overlay {
       position: fixed;
       top: 0;
@@ -186,21 +204,86 @@
       visibility: visible;
     }
 
-    /* Hero badge image styles - desktop */
-    .hero-badge-image {
-      object-position: center 30%;
-      max-height: 500px;
+    /* ============================================
+       TABLET & DESKTOP STYLES
+       Scale up from mobile base
+       ============================================ */
+
+    @media (min-width: 768px) {
+      /* Navigation - Desktop */
+      .site-nav {
+        padding: 1.5rem 0;
+        margin-bottom: 0.75rem;
+        border-radius: 0 0 16px 16px;
+      }
+
+      .nav-logo {
+        height: 160px;
+      }
+
+      .nav-tagline {
+        font-size: 1.5rem;
+      }
+
+      /* Hero Section - Desktop */
+      .hero-section {
+        padding: 3rem 0;
+        min-height: 600px;
+      }
+
+      .hero-container {
+        flex-direction: row;
+        gap: var(--space-3xl);
+        align-items: center;
+      }
+
+      .hero-text {
+        flex: 0 0 40%;
+        max-width: 40%;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: 2rem;
+      }
+
+      /* Hero Image - Desktop */
+      .hero-image-container {
+        flex: 0 0 55%;
+        max-width: 55%;
+      }
+
+      .hero-image-wrapper {
+        width: 75%;
+        height: auto;
+        overflow: visible;
+      }
+
+      .hero-badge-image {
+        height: auto;
+        max-height: 500px;
+      }
+    }
+
+    /* Large Desktop */
+    @media (min-width: 1025px) {
+      .nav-logo {
+        height: 180px;
+      }
     }
   </style>
 </head>
 <body>
 
   <!-- Navigation -->
-  <nav class="nav container mobile-nav" style="padding-top: 1.5rem; padding-bottom: 1.5rem; background: linear-gradient(to bottom, #FBF9F5 0%, #FFFFFF 100%); margin-bottom: 0.75rem; border-radius: 0 0 16px 16px; box-shadow: 0 2px 12px rgba(47, 79, 63, 0.04);">
-    <div style="flex: 1;">
-      <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 1.5rem;">
-        <img src="docs/assets/Brand Assets/Logos/Wander State/png/WS_Wordmark-with-Star.png" alt="Wander State Logo" class="mobile-logo" style="height: 160px; width: auto;">
-        <div style="font-family: 'Thirsty Rough', serif; font-size: 1.5rem; color: #2C4161; line-height: 1.2;">
+  <nav class="nav container site-nav">
+    <div class="nav-logo-container">
+      <a href="index.html" class="nav-logo-link">
+        <img src="docs/assets/Brand Assets/Logos/Wander State/png/WS_Wordmark-with-Star.png" alt="Wander State Logo" class="nav-logo">
+        <div class="nav-tagline">
           Functional Sparkling Teas
         </div>
       </a>
@@ -235,26 +318,26 @@
   </div>
 
   <!-- Hero Section -->
-  <section class="hero" style="background: transparent; min-height: 600px;">
-    <div class="container mobile-hero-container" style="display: flex; align-items: center; gap: var(--space-3xl); position: relative; z-index: 2;">
-      <!-- Left side: Text -->
-      <div class="mobile-hero-text" style="flex: 0 0 40%; max-width: 40%;">
-        <h2 class="mb-lg" style="font-family: 'TAY Birdie', cursive; color: #2C4161; line-height: 1.3; text-align: left;">
-          <div class="mobile-hero-heading" style="font-weight: bold; font-size: 2.5rem; margin-bottom: 0.5rem;">WANDER.</div>
-          <div class="mobile-hero-subheading" style="font-size: 2rem; font-weight: normal;">Stay Curious. Explore. Connect.</div>
+  <section class="hero-section">
+    <div class="container hero-container">
+      <!-- Text -->
+      <div class="hero-text">
+        <h2 class="hero-heading">
+          <div class="hero-title">WANDER.</div>
+          <div class="hero-subtitle">Stay Curious. Explore. Connect.</div>
         </h2>
-        <p class="lead mobile-text-left" style="max-width: 100%;">
+        <p class="lead hero-description">
           Using the highest-quality functional mushrooms and premium ingredients, we crafted these crisp, energizing teas to nourish your mind and body on life's journey.
         </p>
-        <p class="lead mobile-text-left" style="max-width: 100%; margin-top: var(--space-md);">
+        <p class="lead hero-description mt-md">
           Wherever your path leads, we're grateful to Wander with you.
         </p>
       </div>
 
-      <!-- Right side: Image -->
-      <div class="mobile-hero-image" style="flex: 0 0 55%; max-width: 55%;">
-        <div style="position: relative; width: 75%; margin: 0 auto;">
-          <img src="docs/assets/homepage image 2.jpg" alt="Wander State" class="hero-badge-image" style="width: 100%; height: auto; display: block; object-fit: cover; -webkit-mask-image: url('docs/assets/Brand Assets/Logos/Chamomile & Blackberry/WS_chamomile_web.png'); -webkit-mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; mask-image: url('docs/assets/Brand Assets/Logos/Chamomile & Blackberry/WS_chamomile_web.png'); mask-size: 100% 100%; mask-repeat: no-repeat; mask-position: center; filter: drop-shadow(0 10px 25px rgba(47, 79, 63, 0.25));">
+      <!-- Image -->
+      <div class="hero-image-container">
+        <div class="hero-image-wrapper">
+          <img src="docs/assets/homepage image 2.jpg" alt="Wander State" class="hero-badge-image">
         </div>
       </div>
     </div>
