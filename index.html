@@ -15,10 +15,10 @@
     /* Body - Mobile Background */
     body {
       background-image: url('docs/assets/Brand Assets/Color Palettes/mountain background png.png');
-      background-size: contain;
-      background-position: center center;
-      background-repeat: repeat-y;
-      background-attachment: scroll;
+      background-size: 100% auto;
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
 
     /* Navigation - Mobile Base */
@@ -219,6 +219,12 @@
        ============================================ */
 
     @media (min-width: 768px) {
+      /* Background - Desktop uses cover for full coverage */
+      body {
+        background-size: cover;
+        background-position: center center;
+      }
+
       /* Navigation - Desktop */
       .site-nav {
         padding: 1.5rem 0;
