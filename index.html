@@ -12,6 +12,15 @@
        Base styles are for mobile, then scale up
        ============================================ */
 
+    /* Body - Mobile Background */
+    body {
+      background-image: url('docs/assets/Brand Assets/Color Palettes/mountain background png.png');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
     /* Navigation - Mobile Base */
     .site-nav {
       padding: 1rem 0;
@@ -210,6 +219,12 @@
        ============================================ */
 
     @media (min-width: 768px) {
+      /* Remove mountain background on desktop */
+      body {
+        background-image: none;
+        background-color: #FFFFFF;
+      }
+
       /* Navigation - Desktop */
       .site-nav {
         padding: 1.5rem 0;
