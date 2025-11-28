@@ -32,17 +32,20 @@
       }
 
       /* Ensure badge mask and cropping work on mobile */
-      .mobile-hero-image img {
+      .mobile-hero-image .hero-badge-image {
         object-position: center 29% !important;
-        max-height: 275px !important;
-        height: 275px !important;
+        max-height: 270px !important;
+        height: 270px !important;
+        min-height: 270px !important;
         width: 100% !important;
         object-fit: cover !important;
       }
 
-      .mobile-hero-image div {
+      .mobile-hero-image > div {
         width: 85% !important;
         max-width: 320px !important;
+        height: 270px !important;
+        overflow: hidden !important;
       }
 
       /* Adjust heading sizes for mobile */
