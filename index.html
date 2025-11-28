@@ -26,9 +26,23 @@
       }
 
       .mobile-hero-text,
-      .mobile-hero-image {
+      .mobile-hero-image,
+      .mobile-hero-description {
         flex: 1 1 100% !important;
         max-width: 100% !important;
+      }
+
+      /* Reorder hero content on mobile: heading, image, description */
+      .mobile-hero-heading-wrapper {
+        order: 1;
+      }
+
+      .mobile-hero-image {
+        order: 2;
+      }
+
+      .mobile-hero-description {
+        order: 3;
       }
 
       /* Adjust heading sizes for mobile */
@@ -208,22 +222,26 @@
   <section class="hero" style="background: transparent; min-height: 600px;">
     <div class="container mobile-hero-container" style="display: flex; align-items: center; gap: var(--space-3xl); position: relative; z-index: 2;">
       <!-- Left side: Text -->
-      <div class="mobile-hero-text" style="flex: 0 0 40%; max-width: 40%;">
+      <div class="mobile-hero-text mobile-hero-heading-wrapper" style="flex: 0 0 40%; max-width: 40%;">
         <h2 class="mb-lg" style="font-family: 'TAY Birdie', cursive; color: #2C4161; line-height: 1.3; text-align: left;">
           <div class="mobile-hero-heading" style="font-weight: bold; font-size: 2.5rem; margin-bottom: 0.5rem;">WANDER.</div>
           <div class="mobile-hero-subheading" style="font-size: 2rem; font-weight: normal;">Stay Curious. Explore. Connect.</div>
         </h2>
+      </div>
+
+      <!-- Right side: Image -->
+      <div class="mobile-hero-image" style="flex: 0 0 55%; max-width: 55%;">
+        <img src="docs/assets/homepage image 2.jpg" alt="Wander State" style="width: 75%; max-height: 350px; height: auto; object-fit: cover; object-position: center; margin: 0 auto; display: block;">
+      </div>
+
+      <!-- Description text (shows below image on mobile) -->
+      <div class="mobile-hero-description" style="flex: 0 0 40%; max-width: 40%;">
         <p class="lead mobile-text-left" style="max-width: 100%;">
           Using the highest-quality functional mushrooms and premium ingredients, we crafted these crisp, energizing teas to nourish your mind and body on life's journey.
         </p>
         <p class="lead mobile-text-left" style="max-width: 100%; margin-top: var(--space-md);">
           Wherever your path leads, we're grateful to Wander with you.
         </p>
-      </div>
-
-      <!-- Right side: Image -->
-      <div class="mobile-hero-image" style="flex: 0 0 55%; max-width: 55%;">
-        <img src="docs/assets/homepage image 2.jpg" alt="Wander State" style="width: 75%; height: auto; margin: 0 auto; display: block;">
       </div>
     </div>
   </section>
