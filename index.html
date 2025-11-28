@@ -31,6 +31,13 @@
         max-width: 100% !important;
       }
 
+      /* Ensure badge mask and cropping work on mobile */
+      .mobile-hero-image img {
+        object-fit: cover !important;
+        object-position: center 30% !important;
+        max-height: 400px !important;
+      }
+
       /* Adjust heading sizes for mobile */
       .mobile-hero-heading {
         font-size: 2rem !important;
