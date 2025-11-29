@@ -32,8 +32,11 @@
       }
 
       body {
-        background-color: #FFFFFF !important;
-        background-image: none !important;
+        background-image: url('docs/assets/Brand Assets/Color Palettes/mountain background png.png') !important;
+        background-size: auto 2000px !important;
+        background-position: center top !important;
+        background-repeat: no-repeat !important;
+        background-attachment: scroll !important;
         min-height: 100vh !important;
         height: auto !important;
       }
@@ -62,6 +65,17 @@
     @media (min-width: 768px) and (max-width: 1024px) {
       .mobile-logo {
         height: 120px !important;
+      }
+    }
+
+    /* Desktop Background */
+    @media (min-width: 768px) {
+      body {
+        background-image: url('docs/assets/Brand Assets/Color Palettes/mountain background png.png');
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
       }
     }
 
