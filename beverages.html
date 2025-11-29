@@ -25,6 +25,15 @@
         border-radius: 0 !important;
       }
 
+      /* Stack grids on mobile */
+      .grid-cols-3 {
+        grid-template-columns: 1fr !important;
+      }
+
+      .grid-cols-2 {
+        grid-template-columns: 1fr !important;
+      }
+
       /* Make all backgrounds transparent or semi-transparent on mobile to show mountain background */
       html {
         height: 100%;
@@ -172,7 +181,7 @@
     <div style="flex: 1;">
       <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 1.5rem;">
         <img src="docs/assets/Brand Assets/Logos/Wander State/png/WS_Wordmark-with-Star.png" alt="Wander State Logo" class="mobile-logo" style="height: 160px; width: auto;">
-        <div style="font-family: 'Thirsty Rough', serif; font-size: 1.5rem; color: #2C4161; line-height: 1.2;">
+        <div class="mobile-hide-tagline" style="font-family: 'Thirsty Rough', serif; font-size: 1.5rem; color: #2C4161; line-height: 1.2;">
           Functional Sparkling Teas
         </div>
       </a>
