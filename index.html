@@ -288,6 +288,24 @@
         align-items: center;
       }
 
+      /* Hero Content Wrapper - Desktop: Side by Side */
+      .hero-content-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 3rem;
+        justify-content: center;
+      }
+
+      .hero-text-block {
+        flex: 0 0 auto;
+        text-align: left;
+      }
+
+      .hero-text-block .hero-heading {
+        text-align: left;
+      }
+
       .hero-text {
         flex: 0 0 40%;
         max-width: 40%;
@@ -370,17 +388,22 @@
 
   <!-- Hero Block: Wander + Badge + Tagline -->
   <section class="container text-center pt-3xl pb-3xl">
-    <!-- Wander Heading -->
-    <h2 class="hero-heading" style="margin-bottom: 0.5rem;">
-      <div class="hero-title" style="margin-bottom: 0.5rem;">WANDER.</div>
-      <div class="hero-subtitle" style="margin-bottom: 0.5rem;">Stay Curious. Explore. Connect.</div>
-      <div class="hero-title" style="margin-bottom: 0;">Nourish Your Journey.</div>
-    </h2>
+    <!-- Hero Content Wrapper -->
+    <div class="hero-content-wrapper">
+      <!-- Wander Heading -->
+      <div class="hero-text-block">
+        <h2 class="hero-heading" style="margin-bottom: 0.5rem;">
+          <div class="hero-title" style="margin-bottom: 0.5rem;">WANDER.</div>
+          <div class="hero-subtitle" style="margin-bottom: 0.5rem; color: #14433D;">Stay Curious. Explore. Connect.</div>
+          <div class="hero-title" style="margin-bottom: 0;">Nourish Your Journey.</div>
+        </h2>
+      </div>
 
-    <!-- Badge Image -->
-    <div class="hero-image-container">
-      <div class="hero-image-wrapper">
-        <img src="docs/assets/Brand Assets/Logos/Chamomile & Blackberry/WS_chamomile_NoTag_web.png" alt="Wander State" class="hero-badge-image">
+      <!-- Badge Image -->
+      <div class="hero-image-container">
+        <div class="hero-image-wrapper">
+          <img src="docs/assets/Brand Assets/Logos/Chamomile & Blackberry/WS_chamomile_NoTag_web.png" alt="Wander State" class="hero-badge-image">
+        </div>
       </div>
     </div>
   </section>
