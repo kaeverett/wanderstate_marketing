@@ -522,6 +522,7 @@
         <input type="hidden" name="_subject" value="New Pre-Release Signup - WANDER STATE">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://drinkwanderstate.com/index.html?submitted=true">
         <input type="text" name="_honey" style="display:none">
 
         <div class="form-group">
@@ -578,6 +579,17 @@
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         closeModal();
+      }
+    });
+
+    // Check if user was redirected back after form submission
+    window.addEventListener('DOMContentLoaded', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('submitted') === 'true') {
+        // Show success message
+        alert('🎉 Thanks for joining the waitlist! Check your email for confirmation.');
+        // Remove the query parameter from URL
+        window.history.replaceState({}, document.title, window.location.pathname);
       }
     });
   </script>

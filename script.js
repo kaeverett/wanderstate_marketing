@@ -192,24 +192,15 @@ document.addEventListener('DOMContentLoaded', function() {
   // ==========================================
   // FORM VALIDATION (if forms exist)
   // ==========================================
-  const forms = document.querySelectorAll('form');
+  const preReleaseForm = document.getElementById('preReleaseForm');
 
-  forms.forEach(form => {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      // Add your form validation logic here
-      const formData = new FormData(form);
-
-      // Example: Log form data
-      for (let [key, value] of formData.entries()) {
-        console.log(key, value);
-      }
-
-      // Show success message (customize as needed)
-      alert('Thank you for your submission!');
+  if (preReleaseForm) {
+    preReleaseForm.addEventListener('submit', function(e) {
+      // Let FormSubmit.co handle the submission naturally
+      // Don't prevent default - allow the form to submit
+      console.log('Waitlist form submitted');
     });
-  });
+  }
 
   // ==========================================
   // DYNAMIC YEAR FOR COPYRIGHT
