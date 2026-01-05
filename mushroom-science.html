@@ -10,129 +10,184 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="olipop_meets_lacroix_styleguide.css">
   <style>
+    /* Hero Section with Teal Mushroom Background */
+    .hero-mushroom {
+      position: relative;
+      background: linear-gradient(135deg, #2D7A7A 0%, #3A9E9E 100%);
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin-bottom: 0;
+    }
+
+    .hero-mushroom::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('docs/assets/mushroom%20&%20mycelium%20pnw.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.3;
+      z-index: 0;
+    }
+
+    .hero-mushroom-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: white;
+      padding: 4rem 2rem;
+    }
+
+    .hero-mushroom h1 {
+      color: white;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+
+    .hero-mushroom p {
+      color: rgba(255, 255, 255, 0.95);
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Why Wander State Callout Box */
+    .wander-state-callout {
+      background: linear-gradient(135deg, #2D7A7A 0%, #3A9E9E 100%);
+      color: white;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(45, 122, 122, 0.2);
+    }
+
+    .wander-state-callout h3 {
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+
+    .wander-state-callout p {
+      color: rgba(255, 255, 255, 0.95);
+      line-height: 1.75;
+    }
+
+    .wander-state-callout strong {
+      color: white;
+      font-weight: 600;
+    }
+
+    /* Radical Transparency Section - Dark Teal Background */
+    .transparency-section {
+      background: linear-gradient(135deg, #14433D 0%, #2D7A7A 100%);
+      color: white;
+      padding: 5rem 0;
+      margin-top: 4rem;
+    }
+
+    .transparency-section h2,
+    .transparency-section h3,
+    .transparency-section h4 {
+      color: white;
+    }
+
+    .transparency-section p {
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .transparency-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* Mushroom Cards - Simplified styling */
+    .mushroom-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 1024px) {
+      .mushroom-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .mushroom-card-simple {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .mushroom-card-simple:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 32px rgba(47, 79, 63, 0.15);
+    }
+
+    .mushroom-icon-simple {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    .mushroom-card-simple h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--color-primary-forest);
+    }
+
+    .mushroom-card-simple .subtitle {
+      font-size: 0.875rem;
+      font-style: italic;
+      color: var(--color-medium-gray);
+      margin-bottom: 1rem;
+    }
+
+    .mushroom-card-simple .known-for {
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--color-light-gray);
+    }
+
+    .mushroom-card-simple .compounds {
+      font-size: 0.75rem;
+      color: var(--color-dark-gray);
+      line-height: 1.6;
+    }
+
     /* Mobile Optimizations */
     @media (max-width: 767px) {
       .mobile-logo {
         height: 100px !important;
       }
 
-      .mobile-hide-tagline {
-        display: none !important;
+      .hero-mushroom h1 {
+        font-size: 2rem;
       }
 
-      .mobile-nav {
-        margin-bottom: 0.5rem !important;
-        border-radius: 0 !important;
-      }
-
-      .mobile-hero-heading {
-        font-size: 2.5rem !important;
-      }
-
-      .grid-cols-3 {
-        grid-template-columns: 1fr !important;
+      .hero-mushroom p {
+        font-size: 1rem;
       }
 
       .grid-cols-2 {
         grid-template-columns: 1fr !important;
       }
 
-      /* Reduce all excessive spacing on mobile */
-      .pt-7xl {
-        padding-top: 2rem !important;
-      }
-
-      .pb-7xl {
-        padding-bottom: 2rem !important;
-      }
-
-      .pt-5xl {
-        padding-top: 1.5rem !important;
-      }
-
-      .pb-5xl {
-        padding-bottom: 1.5rem !important;
-      }
-
-      .mb-3xl {
-        margin-bottom: 1.5rem !important;
-      }
-
-      .pt-3xl {
-        padding-top: 1.5rem !important;
-      }
-
-      .pb-3xl {
-        padding-bottom: 1.5rem !important;
-      }
-
-      .pt-2xl {
-        padding-top: 1rem !important;
-      }
-
-      .pb-2xl {
-        padding-bottom: 1rem !important;
-      }
-
-      /* Reduce mushroom mycelium image size on mobile */
-      .mushroom-mycelium-container {
-        max-height: 250px !important;
-      }
-
-      .mushroom-mycelium-img {
-        max-height: 250px !important;
-      }
-
-      /* Make all backgrounds transparent or semi-transparent on mobile to show mountain background */
-      html {
-        height: 100%;
-        min-height: 100vh !important;
-      }
-
-      body {
-        background-image: url('docs/assets/Brand Assets/Color Palettes/mountain background png.png') !important;
-        background-size: auto 2000px !important;
-        background-position: center top !important;
-        background-repeat: no-repeat !important;
-        background-attachment: scroll !important;
-        min-height: 100vh !important;
-        height: auto !important;
-      }
-
-      /* Restore normal nav on mobile */
-      .nav {
-        background: linear-gradient(to bottom, #FBF9F5 0%, #FFFFFF 100%) !important;
-      }
-
-      /* Make all sections transparent or semi-transparent */
-      section {
-        background: transparent !important;
-      }
-
-      /* For sections that need some background, make them semi-transparent */
-      .bg-cream,
-      .bg-gradient-mint,
-      .bg-gradient-earth,
-      .bg-gradient-sunset,
-      .bg-gradient-forest {
-        background: rgba(250, 248, 245, 0.25) !important;
-      }
-    }
-
-    @media (min-width: 768px) and (max-width: 1024px) {
-      .mobile-logo {
-        height: 120px !important;
-      }
-    }
-
-    /* Desktop Background */
-    @media (min-width: 768px) {
-      body {
-        background-image: url('docs/assets/Brand Assets/Color Palettes/mountain background png.png');
-        background-size: cover;
-        background-position: center center;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
+      .wander-state-callout {
+        margin-top: 2rem;
       }
     }
 
@@ -220,46 +275,15 @@
       opacity: 1;
       visibility: visible;
     }
-
-    /* Mushroom Card Styles */
-    .mushroom-card {
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .mushroom-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 32px rgba(47, 79, 63, 0.15);
-    }
-
-    .mushroom-icon {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin: 0 auto 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
-    }
-
-    .science-callout {
-      background: linear-gradient(135deg, var(--color-cream) 0%, #FFFFFF 100%);
-      border-left: 4px solid var(--color-primary-forest);
-      padding: 2rem;
-      border-radius: 12px;
-      margin-bottom: 2rem;
-    }
   </style>
 </head>
-<body>
+<body style="background-image: none; background-color: var(--color-cream);">
 
   <!-- Navigation -->
-  <nav class="nav container mobile-nav" style="padding-top: 1.5rem; padding-bottom: 1.5rem; background: linear-gradient(to bottom, #FBF9F5 0%, #FFFFFF 100%); margin-bottom: 0.75rem; border-radius: 0 0 16px 16px; box-shadow: 0 2px 12px rgba(47, 79, 63, 0.04);">
+  <nav class="nav container" style="padding-top: 1.5rem; padding-bottom: 1.5rem; background: linear-gradient(to bottom, #FBF9F5 0%, #FFFFFF 100%); margin-bottom: 0; border-radius: 0 0 16px 16px; box-shadow: 0 2px 12px rgba(47, 79, 63, 0.04);">
     <div style="flex: 1;">
       <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 1.5rem;">
-        <img src="docs/assets/Brand Assets/Logos/Wander State/png/WS_Wordmark-with-Star.png" alt="Wander State Logo" class="mobile-logo" style="height: 160px; width: auto;">
+        <img src="docs/assets/Brand%20Assets/Logos/Wander%20State/png/WS_Wordmark-with-Star.png" alt="Wander State Logo" class="mobile-logo" style="height: 160px; width: auto;">
         <div style="font-family: 'Thirsty Rough', serif; font-size: 1.5rem; color: #2C4161; line-height: 1.2;">
           Functional Sparkling Teas
         </div>
@@ -294,220 +318,164 @@
     </nav>
   </div>
 
-  <!-- Hero Section -->
-  <section class="container text-center pt-7xl pb-7xl">
-    <h1 class="h1 mb-lg mobile-hero-heading">Nature's Classics</h1>
-    <p class="lead mx-auto" style="max-width: 900px;">
-      Rooted in tradition, guided by modern science.
-    </p>
+  <!-- Hero Section with Teal Mushroom Background -->
+  <section class="hero-mushroom">
+    <div class="hero-mushroom-content">
+      <h1>Nature's Classics</h1>
+      <p>Rooted in tradition, guided by modern science.</p>
+    </div>
   </section>
 
-  <!-- Why Mushrooms Section -->
-  <section class="bg-cream pt-7xl pb-7xl">
+  <!-- Why Functional Mushrooms Section -->
+  <section style="background-color: white; padding: 5rem 0;">
     <div class="container">
       <h2 class="h2 text-center mb-3xl">Why Functional Mushrooms?</h2>
 
-      <div class="mb-3xl">
-        <p class="mb-md" style="font-size: 1.125rem; line-height: 1.75;">
-          Humans have been turning to mushrooms for centuries. Across cultures, people noticed that certain fungi supported functional benefits including energy, endurance, focus, clarity, and stress relief.
-        </p>
-        <p style="font-size: 1.125rem; line-height: 1.75;">
-          Today, science is helping to explain why fungi have held our attention for so long. It's where ancient wisdom and modern science intersect: scientists have spent decades studying the unique chemistry of functional mushrooms—compounds like polysaccharides, terpenes, and antioxidants—and how these bioactive molecules benefit humans. At Wander State, we love functional mushrooms because they support enhancing the good things you're already doing for yourself.
-        </p>
-      </div>
-
-      <div class="science-callout">
-        <h4 class="h4 mb-md">Why Wander State Mushrooms</h4>
-
-        <div class="grid grid-cols-2 gap-2xl items-center">
-          <div>
-            <p class="mb-sm" style="color: var(--color-dark-gray);"><strong>The Challenge in the Mushroom Space</strong></p>
-            <p class="mb-md" style="color: var(--color-dark-gray);">
-              The functional mushroom world is exciting—but not always transparent. Many products use only one part of the mushroom, leaving out bioactive compounds found elsewhere. Add in unclear sourcing, inconsistent extraction, and limited testing, and it can be hard to know what you're really getting.
-            </p>
-
-            <p class="mb-sm" style="color: var(--color-dark-gray);"><strong>How We Choose to Do It</strong></p>
-            <p class="mb-md" style="color: var(--color-dark-gray);">
-              Wander State uses Full Spectrum, High Potency mushrooms, using both mycelium and fruiting bodies to capture the full array of naturally occurring bioactive compounds in mushrooms. Our partner, Monterey Nutra, is the only fully vertically integrated mushroom farm in the U.S., with proprietary mushroom genealogy, blends, and extraction methods that unlock the full bioactive potential of every mushroom we use.
-            </p>
-
-            <p class="mb-0" style="color: var(--color-dark-gray);">
-              Every lot is independently tested for potency, and we publish the COAs so you know exactly what's in your beverage. We believe transparency is essential—and we're proud of the mushrooms we use.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Meet the Mushrooms Section -->
-  <section class="container pt-7xl pb-7xl">
-    <h2 class="h2 text-center mb-3xl">Meet Your Mushrooms</h2>
-
-    <div class="grid grid-cols-3 gap-2xl">
-      <!-- Lion's Mane -->
-      <div class="card mushroom-card">
-        <div class="card-body text-center">
-          <div class="mushroom-icon" style="background: transparent;">
-            <img src="docs/assets/lions mane image.png" alt="Lion's Mane mushroom" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: none; outline: none;">
-          </div>
-          <h3 class="h4 mb-md">Lion's Mane</h3>
-          <p class="small mb-md" style="font-style: italic; color: var(--color-medium-gray);">Hericium erinaceus</p>
-          <div class="badge badge-primary mb-lg">Supports Cognitive Support</div>
-
-          <p class="mb-md" style="color: var(--color-dark-gray);">
-            <strong>What it's known for:</strong><br>
-            Recent research suggests Lion's Mane may support cognitive function, mood, and overall brain wellness. Studies point to its potential roles in supporting memory, mental clarity, and neuroprotective activity.
-          </p>
-
-          <p class="mb-md" style="color: var(--color-dark-gray);">
-            <strong>Key compounds:</strong><br>
-            Rich in bioactive compounds such as hericenones, erinacines, beta-glucans, and antioxidants—compounds studied for their potential effects on brain and immune function.
-          </p>
-
-          <p class="small" style="color: var(--color-medium-gray);">
-            <strong>Traditional use:</strong><br>
-            Long valued in traditional Chinese wellness practices for supporting clarity, focus, and overall vitality.
-          </p>
-        </div>
-      </div>
-
-      <!-- Reishi -->
-      <div class="card mushroom-card">
-        <div class="card-body text-center">
-          <div class="mushroom-icon" style="background: transparent;">
-            <img src="docs/assets/reishi image.png" alt="Reishi mushroom" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: none; outline: none;">
-          </div>
-          <h3 class="h4 mb-md">Reishi</h3>
-          <p class="small mb-md" style="font-style: italic; color: var(--color-medium-gray);">Ganoderma lucidum</p>
-          <div class="badge badge-playful mb-lg">Supports Stress Relief & Calm</div>
-
-          <p class="mb-md" style="color: var(--color-dark-gray);">
-            <strong>What it's known for:</strong><br>
-            Reishi has a rich history in traditional wellness systems for promoting calm, immune balance, and resilience to stress. Modern research supports its role in supporting antioxidant activity, immune-response modulation, and overall wellness.
-          </p>
-
-          <p class="mb-md" style="color: var(--color-dark-gray);">
-            <strong>Key compounds:</strong><br>
-            Contains bioactive compounds such as triterpenoids (e.g., ganoderic acids), polysaccharides (including beta-glucans), sterols, and phenolic compounds — each studied for their potential in supporting immune health, liver protection, and antioxidant function.
-          </p>
-
-          <p class="small" style="color: var(--color-medium-gray);">
-            <strong>Traditional use:</strong><br>
-            Long celebrated in East Asian traditions as the "mushroom of immortality," valued for supporting longevity, mental clarity, and holistic vitality.
-          </p>
-        </div>
-      </div>
-
-      <!-- Cordyceps -->
-      <div class="card mushroom-card">
-        <div class="card-body text-center">
-          <div class="mushroom-icon" style="background: transparent;">
-            <img src="docs/assets/cordyceps image.png" alt="Cordyceps mushroom" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
-          </div>
-          <h3 class="h4 mb-md">Cordyceps</h3>
-          <p class="small mb-md" style="font-style: italic; color: var(--color-medium-gray);">Cordyceps militaris</p>
-          <div class="badge badge-success mb-lg">Supports Energy & Endurance</div>
-
-          <p class="mb-md" style="color: var(--color-dark-gray);">
-            <strong>What it's known for:</strong><br>
-            Recent human research indicates Cordyceps militaris mycelium extract helped maintain hemoglobin and hematocrit levels and supported iron-storage (serum ferritin) during a 16-week pre-season training period in long-distance runners — suggesting support for endurance, oxygen utilization, and muscle resilience.
-          </p>
-
-          <p class="mb-md" style="color: var(--color-dark-gray);">
-            <strong>Key compounds:</strong><br>
-            Includes bioactives such as cordycepin and adenosine, as well as beta-glucans — all components being studied for roles in cellular energy, performance, and recovery.
-          </p>
-
-          <p class="small" style="color: var(--color-medium-gray);">
-            <strong>Traditional use:</strong><br>
-            Historically used in Tibetan and eastern wellness practices to support stamina, endurance, and physical vitality.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Full-Spectrum Philosophy Section -->
-  <section class="bg-cream pt-7xl pb-7xl">
-    <div class="container">
-      <h2 class="h2 text-center mb-3xl">Guided by Nature. Grounded in Science.</h2>
-
       <div class="grid grid-cols-2 gap-2xl items-center mb-3xl">
         <div>
-          <h3 class="h3 mb-md">Modern Biotechnology Shaping the Future of Functional Mushrooms</h3>
           <p class="mb-md" style="font-size: 1.125rem; line-height: 1.75;">
-            Monterey Nutra represents a significant advancement in the standardization, potency, and quality of functional mushroom ingredients. They combine proprietary strains with advanced cultivation and testing methods to deliver unprecedented levels of bioactive compounds.
+            Humans have been turning to mushrooms for centuries. Across cultures, people noticed that certain fungi supported functional benefits including energy, endurance, focus, clarity, and stress relief.
           </p>
-          <p class="mb-md" style="color: var(--color-dark-gray);">
-            <strong>Two powerful sources of bioactive compounds:</strong> Both the mycelium and the fruiting body contain distinct sets of naturally occurring compounds that contribute to a mushroom's functional profile. Many commercial products rely on only one component—often missing the broader range of bioactives found when both are used together.
-          </p>
-          <p class="mb-md" style="color: var(--color-dark-gray);">
-            <strong>The Monterey Nutra process:</strong> Each component is cultivated under optimized conditions to preserve its distinct chemistry. High-terpene fruiting bodies are grown on specially selected substrate to support optimal potency. The mycelium is fermented to concentrate key compounds. The two components are then combined into a single standardized ingredient through Monterey Nutra's proprietary dual-extraction process.
-          </p>
-          <p class="mb-md" style="color: var(--color-dark-gray);">
-            This approach delivers a complete range of beneficial compounds, creating what Monterey Nutra describes as "a full-spectrum extract with exceptional neurological and metabolic benefits."
-          </p>
-          <p class="mb-0" style="color: var(--color-dark-gray);">
-            <strong>Why it matters:</strong> You get the synergistic benefits of both components working together—not just isolated pieces. The complete beneficial profile verified by third-party testing.
+          <p style="font-size: 1.125rem; line-height: 1.75;">
+            Today, science is helping to explain why fungi have held our attention for so long. It's where ancient wisdom and modern science intersect: scientists have spent decades studying the unique chemistry of functional mushrooms—compounds like polysaccharides, terpenes, and antioxidants—and how these bioactive molecules benefit humans.
           </p>
         </div>
-      </div>
-
-      <div class="science-callout">
-        <h4 class="h4 mb-md">Proprietary Dual-Extraction Process</h4>
-        <p class="mb-md">
-          Monterey Nutra enhances our mushroom extracts through a proprietary dual-extraction process that maximizes bioactive compound retention:
-        </p>
-        <p class="mb-sm" style="color: var(--color-dark-gray);">
-          <strong>Step 1:</strong> Hot water extraction to capture beta-glucans and all water-soluble compounds.
-        </p>
-        <p class="mb-sm" style="color: var(--color-dark-gray);">
-          <strong>Step 2:</strong> Fermentation extraction to capture all fat-soluble compounds like erinacines, hericenes, and hericenones.
-        </p>
-        <p class="mb-md" style="color: var(--color-dark-gray);">
-          <strong>Step 3:</strong> Controlled dehydration to maximize retention of all compounds of interest.
-        </p>
-        <p class="mb-0">
-          <strong>The result:</strong> An exceptionally broad and potent metabolite profile with total quantified content of bioactive terpenes exceeding 2,000 mcg/g—verified by third-party analytical testing.
-        </p>
+        <div style="text-align: center;">
+          <img src="docs/assets/reishi%20image.png" alt="Reishi Mushroom" style="max-width: 400px; width: 100%; height: auto; border-radius: 16px;">
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Sourcing & Transparency Section -->
-  <section class="container pt-7xl pb-7xl">
-    <h2 class="h2 text-center mb-3xl">Radical Transparency</h2>
-    <p class="text-center mx-auto mb-3xl" style="max-width: 800px; font-size: 1.125rem; color: var(--color-dark-gray);">
-      We believe in our mushrooms and are proud to show you what's in every can.
-    </p>
-
-    <div style="max-width: 600px; margin: 0 auto;">
-      <!-- COAs & Testing -->
-      <div class="card">
-        <div class="card-body text-center">
-          <h3 class="h4 mb-md">Certificates of Analysis</h3>
-          <p class="mb-lg" style="color: var(--color-dark-gray);">
-            Every batch of mushrooms is tested for purity, potency, and active compounds. Want to see the lab results? They're available.
-          </p>
-          <a href="docs/assets/ManeFocus%E2%84%A2%20Lion%27s%20Mane%20Spec%20Sheet.pdf" target="_blank" class="btn btn-outline btn-sm">View Testing Info</a>
+  <!-- Why Wander State Section -->
+  <section style="background-color: var(--color-cream); padding: 5rem 0;">
+    <div class="container">
+      <div class="grid grid-cols-2 gap-2xl items-center">
+        <div style="text-align: center;">
+          <img src="docs/assets/monterey%20mushrooms%20image%202.jpeg" alt="Mushroom Farm" style="max-width: 500px; width: 100%; height: auto; border-radius: 16px;">
+        </div>
+        <div>
+          <div class="wander-state-callout">
+            <h3>Why Wander State</h3>
+            <p class="mb-md"><strong>How We Do It</strong></p>
+            <p class="mb-md" style="font-size: 0.95rem;">
+              Wander State uses Full Spectrum, High Potency mushrooms, using both mycelium and fruiting bodies to capture the full array of naturally occurring bioactive compounds. Our partner, Monterey Nutra, is the only fully vertically integrated mushroom farm in the U.S.
+            </p>
+            <p class="mb-md" style="font-size: 0.95rem;">
+              <strong>The Challenge in the Mushroom Space:</strong> Many products use only one part of the mushroom, leaving out bioactive compounds found elsewhere. Add in unclear sourcing, inconsistent extraction, and limited testing.
+            </p>
+            <p class="mb-0" style="font-size: 0.95rem;">
+              <strong>Our Promise:</strong> Every lot is independently tested for potency, and we publish the COAs so you know exactly what's in your beverage. Full transparency, exceptional quality.
+            </p>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="text-center mt-3xl">
-      <div class="science-callout" style="max-width: 800px; margin: 0 auto;">
-        <h4 class="h4 mb-md">Certifications & Quality Standards</h4>
-        <p class="mb-md">
-          <strong>Monterey Nutra certifications:</strong> USDA National Organic Program certified, Kosher (KOF-K), PrimusGFS, vegan, non-GMO.
-        </p>
-        <p class="mb-md">
-          <strong>Cultivation:</strong> Master growers control humidity, oxygen, temperature, and harvest timing for peak potency. As they state: "We don't source our mushrooms; we grow them!"
-        </p>
-        <p class="mb-0">
-          <strong>Testing:</strong> Every batch tested for beta-glucans, triterpenes, erinacines, hericenones, hericenes, ergothioneine, heavy metals, and microbiological parameters.
-        </p>
+  <!-- Meet Your Mushrooms Section -->
+  <section style="background-color: white; padding: 5rem 0;">
+    <div class="container">
+      <h2 class="h2 text-center mb-md">Meet Your Mushrooms</h2>
+
+      <div class="mushroom-cards">
+        <!-- Lion's Mane -->
+        <div class="mushroom-card-simple">
+          <div class="mushroom-icon-simple">🍄</div>
+          <h3>Lion's Mane</h3>
+          <p class="subtitle">Hericium erinaceus</p>
+
+          <div class="known-for">
+            <p style="margin-bottom: 0.5rem;"><strong>What it's known for:</strong></p>
+            <p style="font-size: 0.875rem; line-height: 1.6;">Recent research suggests Lion's Mane may support cognitive function, mood, and overall brain wellness. Studies point to its potential roles in supporting memory, mental clarity, and neuroprotective activity.</p>
+          </div>
+
+          <div class="compounds">
+            <p style="margin-bottom: 0.5rem;"><strong>Key compounds:</strong></p>
+            <p>Hericenones, erinacines, beta-glucans, and antioxidants—compounds studied for their potential effects on brain and immune function.</p>
+          </div>
+        </div>
+
+        <!-- Reishi -->
+        <div class="mushroom-card-simple">
+          <div class="mushroom-icon-simple">🍄</div>
+          <h3>Reishi</h3>
+          <p class="subtitle">Ganoderma lucidum</p>
+
+          <div class="known-for">
+            <p style="margin-bottom: 0.5rem;"><strong>What it's known for:</strong></p>
+            <p style="font-size: 0.875rem; line-height: 1.6;">Reishi has a rich history in traditional wellness systems for promoting calm, immune balance, and resilience to stress. Modern research supports its role in supporting antioxidant activity and immune-response modulation.</p>
+          </div>
+
+          <div class="compounds">
+            <p style="margin-bottom: 0.5rem;"><strong>Key compounds:</strong></p>
+            <p>Triterpenoids (ganoderic acids), polysaccharides (beta-glucans), sterols, and phenolic compounds—each studied for supporting immune health and antioxidant function.</p>
+          </div>
+        </div>
+
+        <!-- Cordyceps -->
+        <div class="mushroom-card-simple">
+          <div class="mushroom-icon-simple">⚡</div>
+          <h3>Cordyceps</h3>
+          <p class="subtitle">Cordyceps militaris</p>
+
+          <div class="known-for">
+            <p style="margin-bottom: 0.5rem;"><strong>What it's known for:</strong></p>
+            <p style="font-size: 0.875rem; line-height: 1.6;">Recent human research indicates Cordyceps militaris extract supported hemoglobin levels and iron-storage during training in long-distance runners—suggesting support for endurance, oxygen utilization, and muscle resilience.</p>
+          </div>
+
+          <div class="compounds">
+            <p style="margin-bottom: 0.5rem;"><strong>Key compounds:</strong></p>
+            <p>Cordycepin, adenosine, and beta-glucans—all components being studied for roles in cellular energy, performance, and recovery.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Radical Transparency Section - Dark Teal Background -->
+  <section class="transparency-section">
+    <div class="container">
+      <h2 class="h2 text-center mb-md">Radical Transparency</h2>
+      <p class="text-center mx-auto mb-3xl" style="max-width: 800px; font-size: 1.125rem;">
+        We believe in our mushrooms and are proud to show you what's in every can.
+      </p>
+
+      <div style="max-width: 600px; margin: 0 auto;">
+        <div class="transparency-card">
+          <h3 class="h4 mb-md">Certificates of Analysis</h3>
+          <p class="mb-lg">
+            Every batch of mushrooms is tested for purity, potency, and active compounds. Want to see the lab results? They're available.
+          </p>
+          <a href="docs/assets/ManeFocus%E2%84%A2%20Lion%27s%20Mane%20Spec%20Sheet.pdf" target="_blank" class="btn btn-outline btn-sm" style="border-color: white; color: white;">View Testing Info</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications & Quality Standards Section -->
+  <section style="background-color: white; padding: 5rem 0;">
+    <div class="container">
+      <h2 class="h2 text-center mb-3xl">Certifications & Quality Standards</h2>
+
+      <div class="grid grid-cols-2 gap-2xl items-center">
+        <div>
+          <p class="mb-md" style="font-size: 1.125rem;">
+            <strong>Monterey Nutra certifications:</strong> USDA National Organic Program certified, Kosher (KOF-K), PrimusGFS, vegan, non-GMO.
+          </p>
+          <p class="mb-md" style="color: var(--color-dark-gray);">
+            <strong>Cultivation:</strong> Master growers control humidity, oxygen, temperature, and harvest timing for peak potency. As they state: "We don't source our mushrooms; we grow them!"
+          </p>
+          <p class="mb-md" style="color: var(--color-dark-gray);">
+            <strong>Testing:</strong> Every batch tested for beta-glucans, triterpenes, erinacines, hericenones, hericenes, ergothioneine, heavy metals, and microbiological parameters.
+          </p>
+          <p class="mb-0" style="color: var(--color-dark-gray);">
+            <strong>Full-Spectrum Approach:</strong> We use both mycelium and fruiting bodies through Monterey Nutra's proprietary dual-extraction process, delivering over 2,000 mcg/g of bioactive terpenes.
+          </p>
+        </div>
+        <div style="text-align: center;">
+          <img src="docs/assets/monterey%20mushrooms%20image.jpeg" alt="Lab Testing" style="max-width: 500px; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);">
+        </div>
       </div>
     </div>
   </section>
